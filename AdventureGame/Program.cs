@@ -6,8 +6,10 @@ namespace AdventureGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // hej 
+        Console.WriteLine("Hello World!");
+            //Hej Nikola var här
+            // Hej 
+
         }
     }
 }
