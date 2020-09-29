@@ -4,8 +4,9 @@ using System.Text;
 
 namespace AdventureGame
 {
-    class Player
+    class Player : Monster
     {
+        
 
     }
 }
