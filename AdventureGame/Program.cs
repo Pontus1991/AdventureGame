@@ -9,7 +9,7 @@ namespace AdventureGame
         Console.WriteLine("Hello World!");
             //Hej Nikola var här
             // Hej 
-
+            // hejj kiru är här
         }
     }
 }
