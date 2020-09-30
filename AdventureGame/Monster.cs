@@ -26,10 +26,22 @@ namespace AdventureGame
             Patience = patience;
             Charisma = charisma;
         }
+        Random rnd = new Random();
 
         public void Kick()
-        { 
-        
+        {
+            if (Strength <= 5)
+            {
+                int kick = rnd.Next(1, 7);
+                HP -= kick;
+                Console.WriteLine($"A kick flies through the air!\n {kick} in damage, {HP} left!");
+            }
+            else if (Strength >= 5)
+            {
+                int kick = rnd.Next(3, 9);
+                HP -= kick;
+                Console.WriteLine($"A kick flies through the air!\n {kick} in damage, {HP} left!");
+            }
         }
 
         public void Psyche() // Psyka ut på nåt sätt med charisma så player måste vänta (stå över en omgång). På så sätt kan monster göra 2 "moves". 
