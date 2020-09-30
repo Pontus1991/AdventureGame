@@ -14,7 +14,9 @@ namespace AdventureGame
         public string ManaPotion { get; set; }
         public string HealthPotion { get; set; }
 
-        public Player(string sunglasses, string sword, string shield, string egg, string shuriken, string manapotion, string healthpotion) //: base(10, 10, 10, 10, 10, 10, 10, 10)
+        //public string Laser { get; set; }
+
+        public Items(string sunglasses, string sword, string shield, string egg, string shuriken, string manapotion, string healthpotion) //: base(10, 10, 10, 10, 10, 10, 10, 10)
         {
             Sunglasses = sunglasses;
             Sword = sword;
@@ -23,6 +25,9 @@ namespace AdventureGame
             Shuriken = shuriken;
             ManaPotion = manapotion;
             HealthPotion = healthpotion;
+            // Map (Kan hitta den. put it in napsack.)
+            // Specialattack, 30 sec cooldown? laser, oneshotta? 
+
         }
 
     }

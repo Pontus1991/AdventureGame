@@ -27,6 +27,25 @@ namespace AdventureGame
             Charisma = charisma;
         }
 
+        public void Kick()
+        { 
+        
+        }
+
+        public void Psyche() // Psyka ut på nåt sätt med charisma så player måste vänta (stå över en omgång). På så sätt kan monster göra 2 "moves". 
+        {
+
+        }
+        public void Scream()
+        {
+
+        }
+
+        public void LäggDot() // Lägg en dot som gör skada 3 "varv" Inte bleed utan något warlockaktigt. 
+        {
+
+        }
+
 
 
     }
