@@ -7,15 +7,15 @@ namespace AdventureGame
 {
     class Player : Monster
     {
+      
         public List<Items> PlayerBag { get; set; }
 
+        // Konstruktor
         public Player(int hp, int mana, int strength, int endurance, int luck, int agility, int patience, int charisma, List<Items> playerBag) : base(hp, mana, strength, endurance, luck, agility, patience, charisma)
         {
             PlayerBag = playerBag;
         }
 
-        public void MovePlayer()
-        {
             // IF (player is same place as monster)
             // {
             //   “Monstret” kan med sin egenskap styrka=10 via förmågan “sparka” sänka spelarens
@@ -28,7 +28,7 @@ namespace AdventureGame
             //{
 
             //}
-        }
+        
 
         public void UseSword()
         { 
