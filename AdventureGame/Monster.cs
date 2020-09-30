@@ -43,7 +43,7 @@ namespace AdventureGame
                 Console.WriteLine($"A kick flies through the air!\n {kick} in damage, {HP} left!");
             }
         }
-
+       // sdfjsdkfh
         public void Psyche() // Psyka ut på nåt sätt med charisma så player måste vänta (stå över en omgång). På så sätt kan monster göra 2 "moves". 
         {
 
