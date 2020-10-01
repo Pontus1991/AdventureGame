@@ -11,7 +11,7 @@ namespace AdventureGame
             Spelkarta spel = new Spelkarta();
             spel.spelkarta();
             Items WorldItems = new Items("Sunglasses", "Sword", "Shield", "Egg", "Shuriken", "Manapot", "Healthpot");
-            Player Göran = new Player(10, 5, 8,);
+            Player Göran = new Player(10, 5, 8);
             
         }
     }

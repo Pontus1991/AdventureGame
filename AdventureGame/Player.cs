@@ -10,11 +10,16 @@ namespace AdventureGame
     class Player : Monster
     {
       
-        public List<Items> PlayerBag { get; set; }
+        public List<Item> PlayerBag { get; set; }
 
         // Konstruktor
-        public Player(int hp, int mana, int strength, List<Items> playerBag) : base(hp, mana, strength)
+        public Player(int hp, int mana, int strength) : base(hp, mana, strength)
         {
+            PlayerBag = new List<Item>();
+            var shield = new Shield();
+
+            PlayerBag.Add(shield);
+            
         }
 
       

@@ -11,6 +11,8 @@ namespace AdventureGame
         public int Mana { get; set; }
         public int Strength { get; set; }
 
+
+
         public Entity(int hp, int mana, int strength)
         {
             HP = hp;
