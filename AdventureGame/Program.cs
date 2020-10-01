@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Klass_till_spelkarta;
+using System;
 
 namespace AdventureGame
 {
@@ -7,7 +8,8 @@ namespace AdventureGame
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-   
+            Spelkarta spel = new Spelkarta();
+            spel.spelkarta();
         }
     }
 }

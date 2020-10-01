@@ -13,7 +13,7 @@ namespace Klass_till_spelkarta
         const int width = 30;
         const int height = 30;
 
-        static void spelkarta()
+        public void spelkarta()
         {
             var gameWorld = new char[width, height];
 

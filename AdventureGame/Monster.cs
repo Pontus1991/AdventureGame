@@ -47,16 +47,31 @@ namespace AdventureGame
        
         public void Psyche() // Psyka ut på nåt sätt med charisma så player måste vänta (stå över en omgång). På så sätt kan monster göra 2 "moves". 
         {
+            if (Charisma > Patience)
+            {
+               //entity loses turn.
+            }
+            else if (Charisma < Patience)
+            {
+                Console.WriteLine("You stand there looking as stupid as your feeble attempt!"); //entity loses turn
+            }
 
         }
         public void Scream()
         {
-
+            if (Endurance > Strength)
+            {
+                //Entity drops random item and loses a turn.
+            }
+            else if (Endurance < Strength)
+            {
+                //Entity Gets one extra turn.
+            }
         }
 
         public void LäggDot() // Lägg en dot som gör skada 3 "varv" Inte bleed utan något warlockaktigt. 
         {
-
+            //Kostar mana, gör 1 i skada per turn, och slutar inte verka förrens Playern besegrar fienden.
         }
 
 
