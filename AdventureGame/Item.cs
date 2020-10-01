@@ -25,4 +25,4 @@ namespace AdventureGame
 
 
 }
-// skapa Shield som ärver från item. 
+// skapa Shield som ärver från item. Anteckningar 
