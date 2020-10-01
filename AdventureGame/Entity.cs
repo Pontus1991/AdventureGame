@@ -6,6 +6,7 @@ namespace AdventureGame
 {
     abstract class Entity
     {
+        //HEJ
         public int HP { get; set; }
         public int Mana { get; set; }
         public int Strength { get; set; }
