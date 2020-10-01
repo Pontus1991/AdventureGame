@@ -38,62 +38,62 @@ namespace Klass_till_spelkarta
         }
 
 
-            //if (playerBox.Intersects(meteorBox)) 
-            //{
-            //    //Vi har en kollision här!
-            //}
-            // IntersectsWith
-            //do
-            //{
-            //    spelkarta();
-            //    Keyinfo = Console.ReadKey(true);
-            //    Console.Clear();
+        //if (playerBox.Intersects(meteorBox)) 
+        //{
+        //    //Vi har en kollision här!
+        //}
+        // IntersectsWith
+        //do
+        //{
+        //    spelkarta();
+        //    Keyinfo = Console.ReadKey(true);
+        //    Console.Clear();
 
-            //    switch (Keyinfo.Key)
-            //    {
-            //        case ConsoleKey.RightArrow:
-            //            sides++;
-            //            Console.SetCursorPosition(sides, 10);
-            //            Console.Write("X");
-            //            break;
-            //        case ConsoleKey.LeftArrow:
-            //            sides--;
-            //            Console.SetCursorPosition(sides, 10);
-            //            Console.Write("X");
-            //            break;
-            //        case ConsoleKey.UpArrow:
-            //            redo++;
-            //            Console.SetCursorPosition(sides, 10);
-            //            Console.Write("X");
-            //            break;
-            //        case ConsoleKey.DownArrow:
-            //            redo--;
-            //            Console.SetCursorPosition(sides, 10);
-            //            Console.Write("X");
-            //            break;
-            //    }
-            //    } while (redo == 0);
-            //    Console.ReadLine();
-
-
-
-
-         
-
-        
-
-
-            
+        //    switch (Keyinfo.Key)
+        //    {
+        //        case ConsoleKey.RightArrow:
+        //            sides++;
+        //            Console.SetCursorPosition(sides, 10);
+        //            Console.Write("X");
+        //            break;
+        //        case ConsoleKey.LeftArrow:
+        //            sides--;
+        //            Console.SetCursorPosition(sides, 10);
+        //            Console.Write("X");
+        //            break;
+        //        case ConsoleKey.UpArrow:
+        //            redo++;
+        //            Console.SetCursorPosition(sides, 10);
+        //            Console.Write("X");
+        //            break;
+        //        case ConsoleKey.DownArrow:
+        //            redo--;
+        //            Console.SetCursorPosition(sides, 10);
+        //            Console.Write("X");
+        //            break;
+        //    }
+        //    } while (redo == 0);
+        //    Console.ReadLine();
 
 
 
 
-           
-
-            
 
 
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
