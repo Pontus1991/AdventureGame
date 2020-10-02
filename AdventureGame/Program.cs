@@ -12,8 +12,8 @@ namespace AdventureGame
             spel.AddWalls();           
             spel.spelkarta();
            
-            Items WorldItems = new Items("Sunglasses", "Sword", "Shield", "Egg", "Shuriken", "Manapot", "Healthpot");
-            Player Göran = new Player(10, 5, 8);
+            //Items WorldItems = new Items("Sunglasses", "Sword", "Shield", "Egg", "Shuriken", "Manapot", "Healthpot");
+            //Player Göran = new Player(10, 5, 8);
             
         }
     }

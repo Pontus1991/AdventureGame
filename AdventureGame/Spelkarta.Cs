@@ -6,7 +6,10 @@ namespace Klass_till_spelkarta
 {
     class Spelkarta
     {
-
+        /// <summary>
+        /// //  VAD är widht och VAD är height i loopen???  
+        /// Så fort vi ändrar till widht elelr heright spå blir det out of range. 
+        /// </summary>
         //
         int redo = 0;
         int sides = 20;
@@ -40,10 +43,6 @@ namespace Klass_till_spelkarta
         }
         //Nikola -> Har fortfarande problem när jag kör solution i main, får ett C
        
-            
-	    
-
-
         public void spelkarta()
         {
             for (int x = 0; x < width; x++)

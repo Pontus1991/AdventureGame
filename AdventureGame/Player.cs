@@ -13,7 +13,7 @@ namespace AdventureGame
         public List<Item> PlayerBag { get; set; }
 
         // Konstruktor
-        public Player(int hp, int mana, int strength) : base(hp, mana, strength)
+        public Player(int hp, int mana, int strength, int agility) : base(hp, mana, strength, agility)
         {
             PlayerBag = new List<Item>();
             var shield = new Shield();
@@ -21,8 +21,6 @@ namespace AdventureGame
             PlayerBag.Add(shield);
             
         }
-
-      
 
         public override void Kick()
         {
@@ -42,30 +40,32 @@ namespace AdventureGame
         }
         public void UseSword()
         { 
-         //Fixar senare. if
-         // Objektet.HP -= 5?
+            //  Fixar senare. if
+            //  Objektet.HP -= 5?
+            // If player press "space" så anropas denna metod och då gör man x skada. 
+            // Fiendens hp minskar. 
         }
 
-        public void UseShield()
-        {
+        //public void UseShield()
+        //{
 
-            if (PlayerBag.Contains(PlayerBag[2]))
-            {
-                Console.WriteLine($"Du blockar och tar 2 mindre i skada.");
+        //    if (PlayerBag.Contains(PlayerBag[2]))
+        //    {
+        //        Console.WriteLine($"Du blockar och tar 2 mindre i skada.");
 
-            }
-            //Fixar senare. if
-            // Player.HP +=2;
-        }
+        //    }
+        //    //Fixar senare. if
+        //    // Player.HP +=2;
+        //}
 
 
-        public void UseLaser() // 30 sec cooldown etc... 
-        {
-
-        }
+        
 
         public void ExtraDamageLowHp() // Gör mer skada när man har under 30 % hp ?
         {
+            // Hur impleneterar vi att den gör mer hp..
+            // If playerhp is less than 30
+           // Console.WriteLine("Dina styrka ökar med med...");
 
         }
 

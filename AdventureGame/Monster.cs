@@ -8,7 +8,7 @@ namespace AdventureGame
     {
        
 
-        public Monster(int hp, int mana, int strength) : base(hp, mana, strength)
+        public Monster(int hp, int mana, int strength, int agility) : base(hp, mana, strength, agility)
         {           
         }
         public Random rnd = new Random();
@@ -30,8 +30,6 @@ namespace AdventureGame
             }
         }
        
-
-
         public void LäggDot() // Lägg en dot som gör skada 3 "varv" Inte bleed utan något warlockaktigt. 
         {
             //Kostar mana, gör 1 i skada per turn, och slutar inte verka förrens Playern besegrar fienden.
