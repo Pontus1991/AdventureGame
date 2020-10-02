@@ -20,9 +20,9 @@ namespace Klass_till_spelkarta
 
         public void AddWalls()
         {
-            for (int i = 0; i < height; i++)
+            for (int i = 0; i < width; i++)
             {
-                for (int j = 0; j < width; j++)
+                for (int j = 0; j < height; j++)
                 {
                     // Lägg ut på specifika kordinater. 
                     gameWorld[i, 29] = '║'; // kod till väggen till höger
@@ -36,7 +36,7 @@ namespace Klass_till_spelkarta
                 }
             }
         }
-
+        //Nikola -> Har fortfarande problem när jag kör solution i main, får ett C
        
             
 	    
