@@ -20,8 +20,10 @@ namespace Klass_till_spelkarta
 
         public void AddWalls()
         {
-            for (int i = 0; i < width; i++)
+            for (int i = 0; i < width - 1; i++)
             {
+                gameWorld[i, 0] = '║';  // kod till väggen till vänster 
+                gameWorld[29, i] = '═'; // kod till "golvet"
                 for (int j = 0; j < height; j++)
                 {
                     // Lägg ut på specifika kordinater. 
@@ -29,10 +31,10 @@ namespace Klass_till_spelkarta
                     gameWorld[0, j] = '═';  // kod till "taket"
                     gameWorld[0, 0] = '╔';
                     gameWorld[0, 29] = '╗';
-                    gameWorld[28, 29] = '╝';
-                    gameWorld[28, 0] = '╚';
+                    gameWorld[29, 29] = '╝';
+                    gameWorld[29, 0] = '╚';
                     gameWorld[i, 0] = '║';  // kod till väggen till vänster 
-                    gameWorld[28, i] = '═'; // kod till "golvet"
+                    
                 }
             }
         }
