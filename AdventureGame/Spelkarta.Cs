@@ -11,50 +11,67 @@ namespace Klass_till_spelkarta
         /// Så fort vi ändrar till widht elelr heright spå blir det out of range. 
         /// </summary>
         //
-        int redo = 0;
-        int sides = 20;
-        ConsoleKeyInfo Keyinfo;
+        //int redo = 0;
+        //int sides = 20;
+        //ConsoleKeyInfo Keyinfo;
 
-        const int width = 30;
-        const int height = 30;
+        //const int width = 30;
+        //const int height = 30;
         
-        char[,] gameWorld = new char[width, height];
+        //char[,] gameWorld = new char[width, height];
 
 
-        public void AddWalls()
+        int width = 50;
+        int height = 25;
+
+        char[,] matris = new char[height, width];
+        matris[0, width - 1] = '╗';
+        matris[0, 0] = '╔';
+
+        matris[height - 1, 0] = '╚';
+
+
+
+        Console.WriteLine(matris[0, 4]);
+
+        for (int y = 0; y < height; y++) 
         {
-            for (int i = 0; i < width - 1; i++)
-            {
-                gameWorld[i, 0] = '║';  // kod till väggen till vänster 
-                gameWorld[29, i] = '═'; // kod till "golvet"
-                for (int j = 0; j < height; j++)
-                {
-                    // Lägg ut på specifika kordinater. 
-                    gameWorld[i, 29] = '║'; // kod till väggen till höger
-                    gameWorld[0, j] = '═';  // kod till "taket"
-                    gameWorld[0, 0] = '╔';
-                    gameWorld[0, 29] = '╗';
-                    gameWorld[29, 29] = '╝';
-                    gameWorld[29, 0] = '╚';
-                    gameWorld[i, 0] = '║';  // kod till väggen till vänster 
-                    
-                }
-            }
-        }
-        //Nikola -> Har fortfarande problem när jag kör solution i main, får ett C
-       
-        public void spelkarta()
-        {
+            // matris[y, 0] = '║';  // kod till väggen till vänster 
+            matris[y, 0] = '║';  // kod till väggen till vänster
+            matris[y, width - 1] = '║'; // kod till väggen till höger
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y++)
-                {
-                    Console.Write(gameWorld[x, y]); // Skriver ut ramen. 
-                }
+                matris[0, x] = '═'; // kod till "golvet"!
+                matris[height - 1, x] = '═'; // kod till "golvet"!
+                matris[24, 49] = '╝';
+                matris[0, 49] = '╗';
+                matris[0, 0] = '╔';
+                matris[24, 0] = '╚';
 
-                Console.WriteLine();
+                Console.Write(matris[y, x]); // Skriver ut ramen. 
             }
+
+            Console.WriteLine();
         }
+}
+
+}
+
+
+        //Nikola -> Har fortfarande problem när jag kör solution i main, får ett C
+
+        //public void spelkarta()
+        //{
+        //    for (int x = 0; x < width; x++)
+        //    {
+        //        for (int y = 0; y < height; y++)
+        //        {
+        //            Console.Write(gameWorld[x, y]); // Skriver ut ramen. 
+        //        }
+
+        //        Console.WriteLine();
+        //    }
+        //}
 
 
         //if (playerBox.Intersects(meteorBox)) 
@@ -114,5 +131,5 @@ namespace Klass_till_spelkarta
 
 
 
-    }
-}
+    
+
