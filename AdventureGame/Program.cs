@@ -6,10 +6,10 @@ namespace AdventureGame
     class Program
     {        
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        {        
             WorldMap map = new WorldMap();
             map.AddWalls();
+            map.Draw();
             
            
             //Items WorldItems = new Items("Sunglasses", "Sword", "Shield", "Egg", "Shuriken", "Manapot", "Healthpot");

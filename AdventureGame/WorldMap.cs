@@ -6,20 +6,35 @@ namespace AdventureGame
 {
     class WorldMap
     {
+        static int width = 50;
+        static int height = 25; 
+
+        char[,] matris = new char[height, width];
+
+
+        public WorldMap()
+        {
+        }
+
+        public WorldMap(char[,] Matris)
+        {
+            //matris = Matris;
+            //height = matris.GetLength(0);
+            //width = matris.GetLength(1);
+
+        }
+
+
+
         public void AddWalls()
         {
-            int width = 50;
-            int height = 25;
+            
 
-            char[,] matris = new char[height, width];
             matris[0, width - 1] = '╗';
             matris[0, 0] = '╔';
-
+            
             matris[height - 1, 0] = '╚';
-
-
-
-            Console.WriteLine(matris[0, 4]);
+            
 
             for (int y = 0; y < height; y++)
             {
@@ -35,14 +50,38 @@ namespace AdventureGame
                     matris[0, 0] = '╔';
                     matris[24, 0] = '╚';
 
-                    Console.Write(matris[y, x]); // Skriver ut ramen. 
+                    
                 }
 
-                Console.WriteLine();
+                
             }
-
-
-
         }
+
+        public void Draw()
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Console.Write(matris[0, 4]);
+                 
+                for (int x = 0; x < width; x++)
+                {
+                    Console.Write(matris[y, x]); // Skriver ut ramen.
+                }
+            }
+        }
+
+        //public bool IsPositionWalkable(int x, int y) // Is open for the player to walk to. 
+        //{
+        //    // Check bounds first. 
+        //    if (x < 0 || y < 0 || x >= width || y >= height)
+        //    {
+        //        return false;
+        //    }
+
+        //    // Check if the grid is a walkable tile. 
+        //    return matris[y, x] == ' ' || matris[y, x] == 'X'; // X är goal för playern. 
+        //}
+
+
     }
 }
