@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AdventureGame
 {
-    // Hur kopplar vi ihop items med item vad gäller propparna. Syntaxmässigt. 
+    // Hur kopplar vi ihop items med item vad gäller propparna. Syntaxmässigt. ..
     abstract class Item  
     {
         public int AttributeModifier { get; set; }
