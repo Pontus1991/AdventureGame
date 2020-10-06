@@ -10,6 +10,7 @@ namespace AdventureGame
     class Player : Monster
     {
       
+
         public List<Item> PlayerBag { get; set; }
 
         // Konstruktor
