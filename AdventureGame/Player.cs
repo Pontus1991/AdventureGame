@@ -13,13 +13,11 @@ namespace AdventureGame
         public List<Item> PlayerBag { get; set; }
 
         // Konstruktor
-        public Player(int hp, int mana, int strength, int agility) : base(hp, mana, strength, agility)
+        public Player(int hp, int mana, int strength) : base(hp, mana, strength)
         {
             PlayerBag = new List<Item>();
             var shield = new Shield();
-
             PlayerBag.Add(shield);
-            
         }
 
         public override void Kick()

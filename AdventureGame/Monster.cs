@@ -6,9 +6,7 @@ namespace AdventureGame
 {
     class Monster : Entity
     {
-       
-
-        public Monster(int hp, int mana, int strength, int agility) : base(hp, mana, strength, agility)
+        public Monster(int hp, int mana, int strength) : base(hp, mana, strength)
         {           
         }
         public Random rnd = new Random();
