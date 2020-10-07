@@ -9,16 +9,13 @@ namespace AdventureGame
 {
     class Player : Monster
     {
-      
-
         public List<Item> PlayerBag { get; set; }
 
         // Konstruktor
         public Player(int hp, int mana, int strength) : base(hp, mana, strength)
         {
             PlayerBag = new List<Item>();
-            //var shield = new Shield("shield");
-           // PlayerBag.Add(shield);
+      
         }
 
         public override void Kick()
@@ -37,28 +34,6 @@ namespace AdventureGame
                 Console.WriteLine($"A kick flies through the air!\n {kick} in damage, {HP} left!");
             }
         }
-        public void UseSword()
-        { 
-            //  Fixar senare. if
-            //  Objektet.HP -= 5?
-            // If player press "space" så anropas denna metod och då gör man x skada. 
-            // Fiendens hp minskar. 
-        }
-
-        //public void UseShield()
-        //{
-
-        //    if (PlayerBag.Contains(PlayerBag[2]))
-        //    {
-        //        Console.WriteLine($"Du blockar och tar 2 mindre i skada.");
-
-        //    }
-        //    //Fixar senare. if
-        //    // Player.HP +=2;
-        //}
-
-
-        
 
         public void ExtraDamageLowHp() // Gör mer skada när man har under 30 % hp ?
         {

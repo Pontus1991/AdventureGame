@@ -1,4 +1,4 @@
-﻿using Klass_till_spelkarta;
+﻿
 using System;
 
 namespace AdventureGame
@@ -7,7 +7,7 @@ namespace AdventureGame
     {
         static void Main(string[] args)
         {
-            WorldMap p = new WorldMap();
+            Game p = new Game();
             p.DrawWall();
             p.RunGameLoop();
             p.WritePlayer('X', 1, 1);

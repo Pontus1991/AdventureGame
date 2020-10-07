@@ -32,7 +32,12 @@ namespace AdventureGame
        
         public void LäggDot() // Lägg en dot som gör skada 3 "varv" Inte bleed utan något warlockaktigt. 
         {
-            //Kostar mana, gör 1 i skada per turn, och slutar inte verka förrens Playern besegrar fienden.
+            if (Mana >= 10)
+            {
+                Mana -= 20;
+                //Vet ej i hur vi implemeneterar att LäggDot(); Skall göra 1 i skada per "turn".
+            }   //Kostar mana, gör 1 i skada per turn, och slutar inte verka förrens Playern besegrar fienden.
+
         }
 
 

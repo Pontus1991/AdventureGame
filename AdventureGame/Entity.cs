@@ -16,7 +16,7 @@ namespace AdventureGame
         {
             HP = hp; 
             Mana = mana;
-            Strength = strength; // Ska inverka på förnågor. 
+            Strength = strength; // Ska inverka på förmågor. 
             
         }
 
