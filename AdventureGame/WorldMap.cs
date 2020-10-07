@@ -7,6 +7,8 @@ namespace AdventureGame
 {
     class WorldMap
     {
+        const char Player = 'X'; // Character to write on-screen. //
+        int n = 10, o = 10; // Contains current cursor position.
         const int width = 50;
         const int height = 25;
 
@@ -73,8 +75,7 @@ namespace AdventureGame
         
         public void RunGameLoop() // Kör spelet!!!!
         {
-            const char Player = 'X'; // Character to write on-screen.
-            int n = 10, o = 10; // Contains current cursor position.
+            
 
             Player spelare = new Player(100, 100, 10);
             //Console.WriteLine(spelare.HP);
