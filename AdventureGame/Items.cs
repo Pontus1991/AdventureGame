@@ -6,13 +6,38 @@ namespace AdventureGame
 {
     class Items
     {
-        public string Sunglasses { get; set; }
         public string Sword { get; set; }
         public string Shield { get; set; }
-        public string Egg { get; set; }
         public string Shuriken { get; set; }
         public string ManaPotion { get; set; }
         public string HealthPotion { get; set; }
+
+        //public Items(string sword)
+        //{
+        //    Sword = sword; 
+        //}
+
+        //public Items(string shield)
+        //{
+        //    Shield = shield;
+        //}
+
+        //public Items(string shuriken)
+        //{
+        //    Shuriken = shuriken;
+        //}
+
+        //public Items(string manaPotion)
+        //{
+        //    ManaPotion = manaPotion;
+        //}
+
+        //public Items(string healthPotion)
+        //{
+        //    HealthPotion = healthPotion;
+        //}
+
+
 
         //public string Laser { get; set; }
 

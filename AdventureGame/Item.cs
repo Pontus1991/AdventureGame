@@ -47,15 +47,6 @@ namespace AdventureGame
         }
     }
 
-    class Egg : Item // Förbrukningsbart item
-    {
-        public Egg()
-        {
-            Attribute = "Hp";
-            AttributeModifier = 25;  // Ger 25 hp
-        }
-    }
-
     class ManaPot : Item // Förbrukningsbart item
     {
         public ManaPot()
@@ -65,14 +56,5 @@ namespace AdventureGame
         }
     }
 
-    class SunGlasses : Item 
-    {
-        public SunGlasses()
-        {
-            Attribute = "SeeItemsOnMap";
-            AttributeModifier = 10;  // Se alla items på kartan om man har glasögonen på sig. 
-            // Agility har ingen inverkan på förmågor men har man agility över 10 så syns alla items på kartan. 
-        }
-    }
 }
 // skapa Shield som ärver från item. Anteckningar 
