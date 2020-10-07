@@ -21,14 +21,11 @@ namespace AdventureGame
 
     class Shield : Item
     {
-
         public Shield(string shield, int attributeModifier, string attribute)
         {
             Shield = shield;
             Attribute = attribute;
             AttributeModifier = attributeModifier;
-            
-            
         }
     }
 
@@ -70,6 +67,4 @@ namespace AdventureGame
             
         }
     }
-
 }
-// skapa Shield som ärver från item. Anteckningar 

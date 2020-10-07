@@ -8,12 +8,13 @@ namespace AdventureGame
 {
     class WorldMap
     {
-
+        bool gameState = false;
         const char manaPotion = 'M';
         const char Player = 'X'; // Character to write on-screen. //
-        int n = 10, o = 10; // Contains current cursor position.
-        const int width = 50;
-        const int height = 25;
+        int n = 25, o = 25; // Contains current cursor position.
+        private const int width = 50;
+        private const int height = 25; // Vi diskuterade access modifers men eftersom det har ändrats så mycket i vår kod.
+        // Vi ville ha protected å¨våra properties i Enteti men insåg att det inte gick eftersom Worldmap (game) inte ärver ifrån entity. 
 
         char[,] matris = new char[height, width];
 
@@ -43,18 +44,16 @@ namespace AdventureGame
         public void WriteItem(char toWrite, int x = 0, int y = 0)
         // x och y är storleken på rutan 
         {
-            
-            
-                if (x >= 0 && y >= 0) // 0-based
-                {
-                    Console.SetCursorPosition(x, y); // Vart ska man spawna.... 
-                    Console.Write(toWrite); // Denna gör så att spelaren syns. 
-                }
-                else
-                {
-                Console.WriteLine("HEJ DET FUNKAR");
-                return;
-                }
+            if (x >= 0 && y >= 0) // 0-based
+            {
+                Console.SetCursorPosition(x, y); // Vart ska man spawna.... 
+                Console.Write(toWrite); // Denna gör så att spelaren syns. 
+            }
+            else
+            {
+            Console.WriteLine("HEJ DET FUNKAR");
+            return;
+            }
             
            
         }
@@ -74,7 +73,8 @@ namespace AdventureGame
         }
 
         public void AddWalls()
-        {          
+        {
+           
             // Rita ut varelser etc som en char i arrayen....
             for (int y = 0; y < height; y++)
             {
@@ -96,26 +96,36 @@ namespace AdventureGame
         
         public void RunGameLoop() // Kör spelet!!!!
         {
+           
+            //gameState = true;
             ManaPot manaPot = new ManaPot("ManaPotion", 50, "Mana");
-            Display(5, 5, "M");
+            
             Player spelare = new Player(100, 100, 10);
             Shield shield = new Shield("Shield", 20, "HP");
+
+
             spelare.PlayerBag.Add(shield);
             if (spelare.PlayerBag.Contains(shield))
             {
                 spelare.HP += shield.AttributeModifier;
-                Console.WriteLine(spelare.HP);
+                //Console.WriteLine(spelare.HP);
             }
           
             else
             {
                 Console.WriteLine("DET FUNKAR INTE!!!");
             }
-          
+
             //spelare.HP += 20;
             //Console.WriteLine(spelare.HP + shield.AttributeModifier);
-            
+            //if (Player == 'X')
+            //{
+            //    spelare.HP -= 20;
+            //    Console.WriteLine(spelare.HP);
 
+
+            //}
+            //WriteItem('M', 25, 25);
             while (true)
             {
                 //Console.ReadKey();
@@ -124,19 +134,15 @@ namespace AdventureGame
                 //ConsoleKey key = keyinfo.Key; // Med dessa två så måste man trycka pil två gånger
                 if(Console.KeyAvailable)
                 {
-                    if (Player == 'X')
-                    {
-                        
-                        Console.WriteLine(spelare.HP);
-
-                    }
-
+                  
+                    //Console.ReadKey();
                     var player = Console.ReadKey().Key;
                     WritePlayer(Player, n, o);
                     switch (player)
                     {
                         case ConsoleKey.DownArrow:
                             o++;
+                            
                             break;
                         case ConsoleKey.UpArrow:
                             if (o > 0)
@@ -156,17 +162,21 @@ namespace AdventureGame
                             n++;
                             break;
                     }
-                    
-                   
-
-
                 }
+                
+
+               
+
+
                 //else
                 //{
                 //    System.Threading.Thread.Sleep(100);
                 //}
 
             }
+
+            
+          
         }
 
         //public void Draw()
