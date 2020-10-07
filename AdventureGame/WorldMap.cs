@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -7,6 +8,8 @@ namespace AdventureGame
 {
     class WorldMap
     {
+
+        const char manaPotion = 'M';
         const char Player = 'X'; // Character to write on-screen. //
         int n = 10, o = 10; // Contains current cursor position.
         const int width = 50;
@@ -16,7 +19,7 @@ namespace AdventureGame
 
         
 
-        public void display(int x, int y, string s) // Om man vill sätta ut något speciellt och på vilken position????
+        public void Display(int x, int y, string s) // Om man vill sätta ut något speciellt och på vilken position????
         {
             Console.SetCursorPosition(x, y);
             Console.Write(s);
@@ -36,6 +39,24 @@ namespace AdventureGame
             catch (Exception)
             {
             }
+        }
+        public void WriteItem(char toWrite, int x = 0, int y = 0)
+        // x och y är storleken på rutan 
+        {
+            
+            
+                if (x >= 0 && y >= 0) // 0-based
+                {
+                    Console.SetCursorPosition(x, y); // Vart ska man spawna.... 
+                    Console.Write(toWrite); // Denna gör så att spelaren syns. 
+                }
+                else
+                {
+                Console.WriteLine("HEJ DET FUNKAR");
+                return;
+                }
+            
+           
         }
 
         public void DrawWall()
@@ -75,25 +96,43 @@ namespace AdventureGame
         
         public void RunGameLoop() // Kör spelet!!!!
         {
-            
-
+            ManaPot manaPot = new ManaPot("ManaPotion", 50, "Mana");
+            Display(5, 5, "M");
             Player spelare = new Player(100, 100, 10);
-            //Console.WriteLine(spelare.HP);
-            Shield shield = new Shield();
-            spelare.PlayerBag.Contains(shield);
-            spelare.HP += 20;
-            Console.WriteLine(spelare.HP);
+            Shield shield = new Shield("Shield", 20, "HP");
+            spelare.PlayerBag.Add(shield);
+            if (spelare.PlayerBag.Contains(shield))
+            {
+                spelare.HP += shield.AttributeModifier;
+                Console.WriteLine(spelare.HP);
+            }
+          
+            else
+            {
+                Console.WriteLine("DET FUNKAR INTE!!!");
+            }
+          
+            //spelare.HP += 20;
+            //Console.WriteLine(spelare.HP + shield.AttributeModifier);
+            
 
             while (true)
             {
-                WritePlayer(Player, n, o); // Skriv ut spelaren
+                //Console.ReadKey();
+                // Skriv ut spelaren
                 //ConsoleKeyInfo keyinfo = Console.ReadKey(true); // Med dessa två så måste man trycka pil två gånger
                 //ConsoleKey key = keyinfo.Key; // Med dessa två så måste man trycka pil två gånger
-                if (Console.KeyAvailable)
+                if(Console.KeyAvailable)
                 {
+                    if (Player == 'X')
+                    {
+                        
+                        Console.WriteLine(spelare.HP);
+
+                    }
 
                     var player = Console.ReadKey().Key;
-
+                    WritePlayer(Player, n, o);
                     switch (player)
                     {
                         case ConsoleKey.DownArrow:
@@ -117,7 +156,10 @@ namespace AdventureGame
                             n++;
                             break;
                     }
+                    
                    
+
+
                 }
                 //else
                 //{

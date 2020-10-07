@@ -17,8 +17,8 @@ namespace AdventureGame
         public Player(int hp, int mana, int strength) : base(hp, mana, strength)
         {
             PlayerBag = new List<Item>();
-            var shield = new Shield();
-            PlayerBag.Add(shield);
+            //var shield = new Shield("shield");
+           // PlayerBag.Add(shield);
         }
 
         public override void Kick()

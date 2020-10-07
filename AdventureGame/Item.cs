@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace AdventureGame
@@ -7,16 +8,27 @@ namespace AdventureGame
     // Hur kopplar vi ihop items med item vad gäller propparna. Syntaxmässigt. ..
     abstract class Item  
     {
+        public string Sword { get; set; }
+        public string Shield { get; set; }
+        public string Shuriken { get; set; }
+        public string ManaPotion { get; set; }
+        public string HealthPotion { get; set; }
         public int AttributeModifier { get; set; }
         public string Attribute { get; set; }
     }
 
+  
+
     class Shield : Item
     {
-        public Shield()
+
+        public Shield(string shield, int attributeModifier, string attribute)
         {
-            Attribute = "hp";
-            AttributeModifier = 20;  // Hur mycket ska skölden ge...
+            Shield = shield;
+            Attribute = attribute;
+            AttributeModifier = attributeModifier;
+            
+            
         }
     }
 
@@ -49,10 +61,13 @@ namespace AdventureGame
 
     class ManaPot : Item // Förbrukningsbart item
     {
-        public ManaPot()
+        public ManaPot(string manaPot,int attributeModifier, string attribute)
         {
-            Attribute = "Mana";
-            AttributeModifier = 50;  // Ger 50 mana 
+            ManaPotion = manaPot;
+            AttributeModifier = attributeModifier;
+            Attribute = attribute;
+            
+            
         }
     }
 
