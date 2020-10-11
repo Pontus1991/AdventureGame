@@ -18,23 +18,23 @@ namespace BlackJack5._0
 
         public void CreateCardDeck()
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++) // Skapa 4 kort.
             {
                 for (int j = 2; j <= 14; j++)
                 {
-                    if (j <= 10)
+                    if (j <= 10) // Skapar oklädda kort upp till 10 i if-satsen.
                     {
-                        Card card = new Card(j, j.ToString());
-                        cardDeck.Add(card);
+                        Card card = new Card(j, j.ToString()); // Skapa objektet.  j, krävs från konstruktorn.
+                        cardDeck.Add(card); // Om j är mindre eller lika med 10 komemr den skapa oklädda kort 
                     }
-                    else if (j == 11)
+                    else if (j == 11) // Är j 11 kommer en knekt skapas. (Type) är klädda kort 
                     {
                         Card card = new Card(10, "Knekt");
                         cardDeck.Add(card);
                     }
                     else if (j == 12)
                     {
-                        Card card = new Card(10, "Dam");
+                        Card card = new Card(10, "Dam"); // Hårdkodar värdet 10
                         cardDeck.Add(card);
                     }
                     else if (j == 13)
