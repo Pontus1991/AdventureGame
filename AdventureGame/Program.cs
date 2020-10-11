@@ -10,7 +10,6 @@ namespace AdventureGame
             Game p = new Game();
             p.DrawWall();
             p.RunGameLoop();
-            p.WritePlayer('X', 1, 1);
         }
     }
 }

@@ -4,8 +4,6 @@ using System.Text;
 
 namespace AdventureGame
 {
-
-
     class Monster : Entity
     {
         public Monster(int hp, int mana, int strength) : base(hp, mana, strength)

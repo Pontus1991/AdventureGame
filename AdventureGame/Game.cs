@@ -19,7 +19,7 @@ namespace AdventureGame
 
         
 
-        public void Display(int x, int y, string s) //Om man vill sätta ut något speciellt och på vilken position????
+        public void Display(int x, int y, string s) //Om man vill sätta ut något speciellt och på vilken position?
         {                                           //Kommer inte ut vart vi placerar våra objekt.
             Console.SetCursorPosition(x, y);
             Console.Write(s);
@@ -40,8 +40,26 @@ namespace AdventureGame
                 Console.WriteLine(e.Message);
             }
         }
-  
 
+        public void AddWalls()
+        {
+            for (int y = 0; y < height; y++)
+            {
+
+                matris[y, 0] = '║';
+                matris[y, width - 1] = '║';
+
+                for (int x = 0; x < width; x++)
+                {
+                    matris[0, x] = '═';
+                    matris[height - 1, x] = '═';
+                    matris[24, 49] = '╝';
+                    matris[0, 49] = '╗';
+                    matris[0, 0] = '╔';
+                    matris[24, 0] = '╚';
+                }
+            }
+        }
         public void DrawWall()
         {
             AddWalls();
@@ -55,28 +73,6 @@ namespace AdventureGame
                 Console.WriteLine();
                 //Gör att vi hoppar till ny rad efter varje iteration i x for loopen.
             }
-        }
-
-        public void AddWalls()
-        {
-           
-            
-            for (int y = 0; y < height; y++)
-            {
-                
-                matris[y, 0] = '║'; 
-                matris[y, width - 1] = '║';
-
-                for (int x = 0; x < width; x++)
-                {
-                    matris[0, x] = '═';
-                    matris[height - 1, x] = '═';
-                    matris[24, 49] = '╝';
-                    matris[0, 49] = '╗';
-                    matris[0, 0] = '╔';
-                    matris[24, 0] = '╚';
-                }
-            }       
         }
         
         public void RunGameLoop() // Kör spelet!!!!
@@ -92,7 +88,7 @@ namespace AdventureGame
             Monster zombieKing = new Monster(70, 20, 4);
             Monster warlockKing = new Monster(40, 80, 2);
             warlockKing.LäggDot();
-            Console.WriteLine(warlockKing.Mana);
+            //Console.WriteLine(warlockKing.Mana);
     
             spelare.PlayerBag.Add(shield);
             if (spelare.PlayerBag.Contains(shield))
@@ -106,8 +102,6 @@ namespace AdventureGame
                 
                 if(Console.KeyAvailable)
                 {
-                  
-                    
                     var player = Console.ReadKey().Key;
                     WritePlayer(Player, n, o);
                     switch (player)
@@ -135,19 +129,7 @@ namespace AdventureGame
                             break;
                     }
                 }
-                
-
-               
-
-
-             
-
             }
-
-            
-          
         }
-
-
     }
 }
