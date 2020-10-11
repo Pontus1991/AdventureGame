@@ -6,8 +6,13 @@ namespace BlackJack5._0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // Tja
+            RunGame newGame = new RunGame();
+            newGame.CreateCardDeck();
+            newGame.CreateCardDeck();
+            newGame.CreateCardDeck();
+            newGame.CreateCardDeck();
+            Console.WriteLine(RunGame.cardDeck.Count);
+            Console.ReadLine();
         }
     }
 }
