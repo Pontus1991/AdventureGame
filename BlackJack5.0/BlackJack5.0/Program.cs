@@ -8,10 +8,11 @@ namespace BlackJack5._0
         {
             RunGame newGame = new RunGame();
             newGame.CreateCardDeck();
-            newGame.CreateCardDeck();
-            newGame.CreateCardDeck();
-            newGame.CreateCardDeck();
-            Console.WriteLine(RunGame.cardDeck.Count);
+            ////newGame.CreateCardDeck();
+            ////newGame.CreateCardDeck();
+            ////newGame.CreateCardDeck();
+            newGame.Meny();
+
             Console.ReadLine();
         }
     }

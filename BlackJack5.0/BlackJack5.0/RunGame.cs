@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BlackJack5._0
 {
@@ -9,7 +12,7 @@ namespace BlackJack5._0
         public List<Card> GameDeck { get; set; }
      
         public static List<Card> cardDeck = new List<Card>();
-        Card card = new Card(2);
+        
 
         public void Game()
         {
@@ -51,12 +54,45 @@ namespace BlackJack5._0
             }
             //foreach (var item in cardDeck)
             //{
-            //    Console.WriteLine(item.Value);
-            //    Console.WriteLine(item.Type);
+            //    Console.WriteLine(item.Value);               
             //}
         }
         
         public void Meny()
+        {
+            int meny = 0;
+            //Meny för switchen
+            do
+            {
+                Console.WriteLine("Meny för Black Jack");
+                Console.WriteLine("Meny val 1: \nDra ett kort. ");
+                Console.WriteLine("Meny val 2: \nSpelresultat. ");
+                Console.WriteLine("Meny val 3: \nAvsluta spel. ");
+                Int32.TryParse(Console.ReadLine(),out meny);
+                
+                switch (meny)
+                {
+                    case 1: DrawCard();
+                        break;
+                    case 2: GameLogic();
+                        break;
+                    case 3: EndGame();
+                        break;
+                    default:
+                        if (meny > 3)
+                        {
+                            Console.WriteLine("Vänligen ange ett korrekt meny val");
+                        }
+                        
+                        break;
+                }
+                Console.WriteLine(RunGame.cardDeck.Count);
+                //Console.Clear(); // Denna kanske måste förflyttas ifall inte spelet visas upp korrekt.
+            } while (meny != 0);
+           
+        }
+
+        public void GameResult()
         {
 
         }
@@ -64,12 +100,24 @@ namespace BlackJack5._0
         {
 
         }
+        public void DrawCard()
+        {
+            for (int i = 0; i <=1; i++)
+            {
+                Console.WriteLine($"Du drog {cardDeck[i].Value}");
+                cardDeck.Remove(cardDeck[i]);
+            }
+            
 
+        }
         public void GameLogic()
         {
 
         }
-
+        public void EndGame()
+        {
+            Environment.Exit(0);
+        }
         
 
 
