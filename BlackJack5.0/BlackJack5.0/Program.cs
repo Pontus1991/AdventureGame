@@ -7,11 +7,12 @@ namespace BlackJack5._0
         static void Main(string[] args)
         {
             RunGame newGame = new RunGame();
-            newGame.CreateCardDeck();
+            newGame.GameLogic();
+            //newGame.CreateCardDeck();
             ////newGame.CreateCardDeck();
             ////newGame.CreateCardDeck();
             ////newGame.CreateCardDeck();
-            newGame.Meny();
+            //newGame.Meny();
 
             Console.ReadLine();
         }
