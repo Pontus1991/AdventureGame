@@ -121,7 +121,8 @@ namespace BlackJack5._0
                 summering.Add(cardDeck[i]);
                 cardDeck.Remove(cardDeck[i]);
             }
-
+            int result = summering.Sum(x => x.Value);
+            Console.WriteLine(result);
         }
         public void GameLogic()//Kör igång spelet efter att RunGame har skapats i Main.
         {
