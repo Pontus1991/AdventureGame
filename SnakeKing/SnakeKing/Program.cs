@@ -6,7 +6,11 @@ namespace SnakeKing
     {
         static void Main(string[] args)
         {
-            Console.ReadLine();
+            RunGame newGame = new RunGame();
+            //newGame.SimpleMap();
+            newGame.GenerateMap();
+            
+ 
         }
     }
 }
