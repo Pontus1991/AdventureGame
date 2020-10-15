@@ -6,7 +6,16 @@ namespace SnakeKing
 {
     abstract class Entity
     {
-        //Här kommer koordinaterna.
+        public int X { get; set; }
+        public int Y { get; set; }
 
+        public Entity(int x, int y)
+        {
+
+        }
+        public Entity()
+        {
+
+        }
     }
 }

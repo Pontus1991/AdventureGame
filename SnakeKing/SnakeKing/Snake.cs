@@ -6,17 +6,23 @@ namespace SnakeKing
 {
     class Snake : Entity
     {
-        public int Growth { get; set; }
-        public List<int> Body { get; set; }
-
-        public Snake(int growth, List<int> body)
+        public int InitialLength { get; set; }
+        public int ActualLength            
         {
-            Growth = growth;
-            Body = body;
+            get { return InitialLength + Body.Count; }
         }
-        public void EatApple()
+        private List<Apple> Body { get; set; } 
+
+        public Snake(int intialLength, int x, int y) :base(x, y)//Förhoppningsvis skall detta fungera med att ge en korrekt position på mappen.
         {
-            //Anropa i RunGame, GenerateApple(), SpawnApple();
+            InitialLength = intialLength;
+            Body = new List<Apple>();//Här måste vi instansiera listan. Annars blir det ExceptionNull.
+            X = x;
+            Y = y;
+        }
+        public void EatApple(Apple apple)
+        {
+            Body.Add(apple);
         }
         public void SetCursorPos()
         {

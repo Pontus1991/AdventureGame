@@ -29,7 +29,7 @@ namespace SnakeKing
 
         public void NewMap()
         {
-            for (int i = 0; i < WidthX + 1; i++) // Yttre forloop går igneom VÅGRÄTT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            for (int i = 0; i < WidthX + 1; i++) // Yttre forloop går igenom VÅGRÄTT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             {
                 Console.SetCursorPosition(i, 0);
                 Console.Write("═");
