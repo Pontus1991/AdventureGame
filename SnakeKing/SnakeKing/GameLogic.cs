@@ -5,66 +5,38 @@ using System.Text;
 
 namespace SnakeKing
 {
-    class GameLogic : Entity
+    class GameLogic
     {
         bool gameStatus = true;
         Snake snakeKun;
         public void GeneratePlayer()
         {
-            snakeKun = new Snake(5, 1, 15);
+            snakeKun = new Snake(1, 10, 15);
         }
         public void RunGame()
         {
-            Console.WriteLine(snakeKun.X + snakeKun.Y);   
+            //Console.WriteLine($"\nSnakeKun.X: {snakeKun.X} SnakeKun.Y:{snakeKun.Y}");
+            //Console.WriteLine($"\nBufferWidth: {Console.BufferWidth} BufferHeight:{Console.BufferHeight}");
+            Console.SetCursorPosition(5, 5);
 
-
-            ConsoleKey command = Console.ReadKey().Key;
             do
             {
-                switch (command)
-                {    
-                    case ConsoleKey.LeftArrow:
-                        Console.SetCursorPosition(snakeKun.X, snakeKun.Y);
-                        Console.WriteLine(" ");
-                        snakeKun.X--;
-                        break;
-                    case ConsoleKey.UpArrow:
-                        Console.SetCursorPosition(snakeKun.X, snakeKun.Y);
-                        Console.WriteLine(" ");
-                        snakeKun.Y--;
-                        break;
-                    case ConsoleKey.RightArrow:
-                        Console.SetCursorPosition(snakeKun.X, snakeKun.Y);
-                        Console.WriteLine(" ");
-                        snakeKun.X++;
-                        break;
-                    case ConsoleKey.DownArrow:
-                        Console.SetCursorPosition(snakeKun.X, snakeKun.Y);
-                        Console.WriteLine(" ");
-                        snakeKun.Y++;
-                        break;
-                
-                    //case ConsoleKey.Spacebar://Pausa spelet
-                    //    break;
 
-                default:
-                        break;
-                }
-                //Console.SetCursorPosition(X, Y);
-                //Console.WriteLine((char)2);
+                
 
             } while (gameStatus);
 
         }
+        // Behöver en loop som körs oberoende om man gör nånting eller inte... ThreadSleep
+        // Behöver separear switch-casen. Den gör nu 2 olika saker. 
 
 
-    
         public void GenerateMap()
         {
             WorldMap worldMap = new WorldMap();//Kan själva bestämma X och Y.
             worldMap.NewMap();
         }
-       
+
         public void GenerateApple()
         {
 
@@ -115,7 +87,7 @@ namespace SnakeKing
         //        default:
         //            break;
         //    }
-            
+
         //}
         //public void Shift()
         //{
@@ -125,6 +97,6 @@ namespace SnakeKing
         //        Y[i - 1] = Y[i - 2];
         //    }
         //}
-        
+
     }
 }

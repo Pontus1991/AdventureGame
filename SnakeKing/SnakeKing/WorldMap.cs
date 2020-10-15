@@ -10,9 +10,6 @@ namespace SnakeKing
         public int WidthX { get; set; }
         public int HeightY { get; set; }
 
-       
-
-
         public WorldMap(int widthX, int heightY)
         {
             WidthX = widthX;
@@ -24,8 +21,6 @@ namespace SnakeKing
             WidthX = 54;
             HeightY = 25;
         }
-
-
 
         public void NewMap()
         {

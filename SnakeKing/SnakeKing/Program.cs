@@ -6,6 +6,7 @@ namespace SnakeKing
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             GameLogic newGame = new GameLogic();
             //newGame.SimpleMap();
             newGame.GenerateMap();
