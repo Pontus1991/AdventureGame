@@ -6,7 +6,7 @@ namespace SnakeKing
 {
     class WorldMap
     {
-        //Ifall vi inte får detta att fungera i metodanropet i RunGame, skapa bara WorldMap i RunGame. -> Kopiera helst den koden då
+        //Ifall vi inte får detta att fungera i metodanropet i RunGame, skapa bara WorldMap i RunGame. -> Kopiera helst den koden då.
         public int WidthX { get; set; }
         public int HeightY { get; set; }
 
