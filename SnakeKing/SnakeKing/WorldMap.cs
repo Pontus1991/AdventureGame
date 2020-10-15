@@ -10,7 +10,7 @@ namespace SnakeKing
         public int WidthX { get; set; }
         public int HeightY { get; set; }
 
-        public char[,] Matris { get; set; }
+       
 
 
         public WorldMap(int widthX, int heightY)
@@ -26,9 +26,10 @@ namespace SnakeKing
         }
 
 
+
         public void NewMap()
         {
-            for (int i = 1; i < WidthX + 1; i++) // Yttre forloop går igneom VÅGRÄTT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            for (int i = 0; i < WidthX + 1; i++) // Yttre forloop går igneom VÅGRÄTT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             {
                 Console.SetCursorPosition(i, 0);
                 Console.Write("═");
