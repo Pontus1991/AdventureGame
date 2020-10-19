@@ -7,22 +7,23 @@ namespace SnakeKing
 {
     class GameLogic
     {
+        int counter = 0;
         bool gameStatus = true;
         Snake snakeKun;
         public void GeneratePlayer()
         {
-            snakeKun = new Snake(1, 10, 15);
+            snakeKun = new Snake(1, 15, 17);
         }
         public void RunGame()
         {
             //Console.WriteLine($"\nSnakeKun.X: {snakeKun.X} SnakeKun.Y:{snakeKun.Y}");
-            //Console.WriteLine($"\nBufferWidth: {Console.BufferWidth} BufferHeight:{Console.BufferHeight}");
-            Console.SetCursorPosition(5, 5);
-
+            //Console.WriteLine($"\nBufferWidth: {Console.BufferWidth} BufferHeight:{Console.BufferHeight}");            
             do
             {
-
+                snakeKun.ReadInput();           
+                snakeKun.Move();
                 
+                //skapa en method för  System.Threading.Thread.Sleep(100);där varje äpple som äts, tar bort en procentuell del av 100.
 
             } while (gameStatus);
 
