@@ -1,0 +1,36 @@
+﻿body {
+    font-family: arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+.hej {
+    color: red;
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.genre-text {
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+img {
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: red;
+}
+#test {
+    
+    display: block; /*Vet ej varför denna display: block; måste finnas här.*/
+    margin-left: auto; /*Varför margin-left: auto;??*/
+    margin-right: auto; /*Varför margin-right: auto;??*/
+}
+
+#ballers-genre-text {
+    color: gold;
+}
