@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +13,12 @@ namespace Lektion1
     {
         public static void Main(string[] args)
         {
-            // Hej. Till onsdag kv�ll ska vi ha gjort lite mer p� codeblocks.
+            // Hej. Till onsdag kväll ska vi ha gjort lite mer på codeblocks.
+            //Tja!! Haha, vi kollar igenom ifall man kör flexbox eller grid!
+            //sen applicerar vi det på vår sida, med lite responsive webdesign och shit tror det är en struktur en sida ska ha
+            //då kan vi göra en mall också, med layout och grids och sånt är klart, som när vi typ gjorde de här projektet.
+            //Kommer blir bra! som hiba hade sagt In šaʾ Allāh!!!!!!
+
             CreateHostBuilder(args).Build().Run();
         }
 
