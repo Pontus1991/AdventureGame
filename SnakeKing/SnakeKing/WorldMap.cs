@@ -14,7 +14,6 @@ namespace SnakeKing
         {
             WidthX = widthX;
             HeightY = heightY;
-            
         }
         public WorldMap()
         {
@@ -57,9 +56,5 @@ namespace SnakeKing
             Console.SetCursorPosition((WidthX), HeightY -1);
             Console.Write("╝");
         }
-        
-
-        //║ ╔ ╗╚╝═
-
     }
 }

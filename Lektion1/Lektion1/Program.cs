@@ -13,6 +13,7 @@ namespace Lektion1
     {
         public static void Main(string[] args)
         {
+            // Hej. Till onsdag kväll ska vi ha gjort lite mer på codeblocks.
             CreateHostBuilder(args).Build().Run();
         }
 
