@@ -17,7 +17,9 @@ namespace Lektion1
             //Tja!! Haha, vi kollar igenom ifall man kör flexbox eller grid!
             //sen applicerar vi det på vår sida, med lite responsive webdesign och shit tror det är en struktur en sida ska ha
             //då kan vi göra en mall också, med layout och grids och sånt är klart, som när vi typ gjorde de här projektet.
-            //Kommer blir bra! som hiba hade sagt In šaʾ Allāh!!!!!!
+           
+            //Applicera Grids på elementen.
+            //Köra igenom async.
 
             CreateHostBuilder(args).Build().Run();
         }

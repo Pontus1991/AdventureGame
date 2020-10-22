@@ -1,8 +1,51 @@
-﻿body {
+﻿
+body {
+    background-color: black; /*Body är syntaxen för hela kroppen av sidan, ha alltid med den ifalldu vill kontrollera hela layouten.*/
     font-family: arial, sans-serif;
-    background-color: black;
     color: white;
 }
+
+.header{
+    grid-area: header;
+}
+.body{
+    grid-area: body;
+}
+.footer{
+    grid-area: footer;
+}
+.banner {
+    grid-area: banner;
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+}
+.grid-container {
+    display: grid;
+    grid-gap: 10px 20px;
+    background-color: white;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "banner header header" 
+        "banner body body" 
+        "banner footer footer"
+}
+
+div{
+    font-family: arial, sans-serif;
+    background-color: black;
+    color: black;
+}
+/*footer under här är ett "element" som stängs med sig själv, dvs </footer> detta blev spaghetti kod*/
+#footer{
+    background-color: red;
+    display: grid;
+    
+}
+/*Detta är en klass vi skapar som har .innan namnet, ingen punkt i class="footer"!!!!!*/
+
+
 .hej {
     color: red;
     border-color: red;
@@ -30,6 +73,7 @@ img {
     margin-left: auto; /*Varför margin-left: auto;??*/
     margin-right: auto; /*Varför margin-right: auto;??*/
 }
+
 
 #ballers-genre-text {
     color: gold;
