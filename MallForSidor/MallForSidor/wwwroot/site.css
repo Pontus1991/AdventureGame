@@ -1,0 +1,35 @@
+﻿
+.grid-container {
+    display: grid;
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    /*Här kan vi bestämma layouten till vår sida, !!!Måste få till det som är i*/
+    grid-template-areas: 
+        "header header header"
+        "banner body body"
+        "footer footer footer";
+}
+
+/*Detta är "layouten" dessa ligger i Index, i <div class="x"> och är omslutna/wrapped av en annan <div class="grid-container"*/
+.header {
+    background-color: LightSkyBlue;
+    grid-area: header;
+}
+
+.body {
+    background-color: LightSalmon;
+    grid-area: body;
+}
+
+
+.banner {
+    background-color: LightPink;
+    grid-area:  banner;
+}
+
+.footer {
+    background-color: PaleGreen;
+    grid-area: footer;
+}
+
