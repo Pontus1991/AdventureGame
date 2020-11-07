@@ -9,12 +9,8 @@ namespace SnakeKing
             Console.CursorVisible = false;
             GameLogic newGame = new GameLogic();
             //newGame.SimpleMap();
-            newGame.GenerateMap();
-            newGame.GeneratePlayer();
             newGame.RunGame();
 
-            
- 
         }
     }
 }

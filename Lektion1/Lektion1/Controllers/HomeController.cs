@@ -12,6 +12,7 @@ namespace Lektion1.Controllers
         
         public IActionResult Index()
         {
+
             return View();
         }
      

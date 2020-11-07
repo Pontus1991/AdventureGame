@@ -6,7 +6,9 @@
     background: LightGray;
     /*Här kan vi bestämma layouten till vår sida, !!!Måste få till det som är i*/
     grid-template-areas: 
-        "header header header"
+         "banner body body"
+        "banner body body"
+        "banner body body"
         "banner body body"
         "footer footer footer";
 }
@@ -18,7 +20,7 @@
 }
 
 .body {
-    background-color: LightSalmon;
+    background-color: blue;
     grid-area: body;
 }
 
