@@ -20,9 +20,17 @@ namespace SlutUppgift.Controllers
         }
 
         // GET: Tracks
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString) // Lägg in searchstring för att kunna söka. 
         {
-            return View(await _context.Track.ToListAsync());
+            var tracks = from m in _context.Track
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString)) // Om searchString INTE är null eller empty så visas namnen som finns i vår databas.
+            {
+                tracks = tracks.Where(s => s.FirstName.Contains(searchString)); // Sök Firstname när du söker namn.
+            }
+
+            return View(await tracks.ToListAsync());
         }
 
         // GET: Tracks/Details/5
