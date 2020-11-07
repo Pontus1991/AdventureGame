@@ -55,7 +55,7 @@ namespace SlutUppgift
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}"); // Ändra hur startsidan ska se ut.
             });
         }
     }
