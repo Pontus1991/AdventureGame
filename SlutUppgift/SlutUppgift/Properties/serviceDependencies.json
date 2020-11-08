@@ -7,6 +7,10 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "SlutUppgiftContext2Connection"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "SlutUppgiftContext3Connection"
     }
   }
 }

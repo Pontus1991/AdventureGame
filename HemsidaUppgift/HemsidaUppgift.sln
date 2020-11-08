@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HemsidaUppgift", "HemsidaUppgift\HemsidaUppgift.csproj", "{C164D92C-A38A-4A30-A5EC-E20A68CAEADD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C164D92C-A38A-4A30-A5EC-E20A68CAEADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C164D92C-A38A-4A30-A5EC-E20A68CAEADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C164D92C-A38A-4A30-A5EC-E20A68CAEADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C164D92C-A38A-4A30-A5EC-E20A68CAEADD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {935F217F-9C1C-45D5-A07B-3DB32E4C989E}
+	EndGlobalSection
+EndGlobal
