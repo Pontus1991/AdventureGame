@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Booking>
+
+@{
+    ViewData["Title"] = "List of bookings";
+}
+
+<h1>All bookings</h1>
+
+<p>
+    <a asp-action="Create">Create new booking</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Booker
+            </th>
+            <th>
+                Room
+            </th>
+            <th>
+                From
+            </th>
+            <th>
+                To
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.Booker</td>
+                <td>@booking.RoomName</td>
+                <td>@booking.From</td>
+                <td>@booking.To</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@booking.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@booking.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

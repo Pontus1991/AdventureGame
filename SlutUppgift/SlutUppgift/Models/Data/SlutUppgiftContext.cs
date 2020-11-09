@@ -11,6 +11,8 @@ namespace SlutUppgift.Data
         }
 
         public DbSet<Track> Track { get; set; }
+
+        public DbSet<User2> User2 { get; set; }
     }
 }
 
