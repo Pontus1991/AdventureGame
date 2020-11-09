@@ -56,13 +56,14 @@ namespace Hemsida.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UserName,PassWord")] Login login)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && login.UserName == "Pontus" && login.PassWord == "Frojd") // En slags validation... 
             {
                 _context.Add(login);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(login);
+
         }
 
         // GET: Logins/Edit/5
