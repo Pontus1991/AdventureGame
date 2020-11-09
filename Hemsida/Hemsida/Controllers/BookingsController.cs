@@ -16,7 +16,7 @@ namespace Hemsida.Controllers
         // GET: Bookings
         public IActionResult Index()
         {
-            var bookings = DbContext.Bookings;
+            var bookings = DbContextLista.Bookings;
 
             return View(bookings);
         }
@@ -24,7 +24,7 @@ namespace Hemsida.Controllers
         // GET: Bookings/Create
         public IActionResult Create()
         {
-            var createBookingViewModel = new CreateBookingViewModel() { Rooms = DbContext.Rooms };
+            var createBookingViewModel = new CreateBookingViewModel() { Rooms = DbContextLista.Rooms };
             return View(createBookingViewModel);
         }
 
@@ -33,7 +33,7 @@ namespace Hemsida.Controllers
         // från vyn till metoden i controllen
         public IActionResult Create(Booking booking)
         {
-            var room = DbContext.Rooms.FirstOrDefault(r => r.Id == booking.RoomId);
+            var room = DbContextLista.Rooms.FirstOrDefault(r => r.Id == booking.RoomId);
 
             if (room == null)
             {
@@ -43,7 +43,7 @@ namespace Hemsida.Controllers
             booking.Id = Guid.NewGuid();
             booking.RoomName = room.Name;
 
-            DbContext.Bookings.Add(booking);
+            DbContextLista.Bookings.Add(booking);
 
             return RedirectToAction("Index");
         }
@@ -56,14 +56,14 @@ namespace Hemsida.Controllers
                 return NotFound();
             }
 
-            var booking = DbContext.Bookings.FirstOrDefault(b => b.Id == id);
+            var booking = DbContextLista.Bookings.FirstOrDefault(b => b.Id == id);
 
             if (booking == null)
             {
                 return NotFound();
             }
 
-            var editBookingViewModel = new EditBookingViewModel() { Booking = booking, Rooms = DbContext.Rooms };
+            var editBookingViewModel = new EditBookingViewModel() { Booking = booking, Rooms = DbContextLista.Rooms };
             return View(editBookingViewModel);
         }
 
@@ -71,16 +71,16 @@ namespace Hemsida.Controllers
         [HttpPost]
         public IActionResult Edit(Booking booking)
         {
-            booking.RoomName = DbContext.Rooms.FirstOrDefault(r => r.Id == booking.RoomId).Name;
+            booking.RoomName = DbContextLista.Rooms.FirstOrDefault(r => r.Id == booking.RoomId).Name;
 
-            var bookingIndex = DbContext.Bookings.FindIndex(m => m.Id == booking.Id);
+            var bookingIndex = DbContextLista.Bookings.FindIndex(m => m.Id == booking.Id);
 
             if (bookingIndex == -1)
             {
                 return NotFound();
             }
 
-            DbContext.Bookings[bookingIndex] = booking;
+            DbContextLista.Bookings[bookingIndex] = booking;
 
             return RedirectToAction(nameof(Index));
         }
@@ -93,7 +93,7 @@ namespace Hemsida.Controllers
                 return NotFound();
             }
 
-            var room = DbContext.Bookings.FirstOrDefault(r => r.Id == id);
+            var room = DbContextLista.Bookings.FirstOrDefault(r => r.Id == id);
 
             if (room == null)
             {
@@ -107,14 +107,14 @@ namespace Hemsida.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var room = DbContext.Bookings.FirstOrDefault(r => r.Id == id);
+            var room = DbContextLista.Bookings.FirstOrDefault(r => r.Id == id);
 
             if (room == null)
             {
                 return NotFound();
             }
 
-            DbContext.Bookings.Remove(room);
+            DbContextLista.Bookings.Remove(room);
 
             return RedirectToAction("Index");
         }

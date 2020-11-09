@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Hemsida.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hemsida
 {
@@ -24,6 +26,9 @@ namespace Hemsida
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<HemsidaContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("HemsidaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace Hemsida
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Rooms}/{action=Index}/{id?}");
+                    pattern: "{controller=Logins}/{action=Index}/{id?}");
             });
         }
     }

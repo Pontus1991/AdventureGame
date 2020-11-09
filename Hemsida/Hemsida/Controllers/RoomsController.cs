@@ -15,7 +15,7 @@ namespace RoomBookingV3.Controllers
         // GET: Rooms
         public IActionResult Index()
         {
-            var rooms = DbContext.Rooms;
+            var rooms = DbContextLista.Rooms;
 
             return View(rooms);
         }
@@ -34,7 +34,7 @@ namespace RoomBookingV3.Controllers
             if (ModelState.IsValid)
             {
                 room.Id = Guid.NewGuid();
-                DbContext.Rooms.Add(room);
+                DbContextLista.Rooms.Add(room);
                 return RedirectToAction("Index");
             }
 
@@ -49,7 +49,7 @@ namespace RoomBookingV3.Controllers
                 return NotFound();
             }
 
-            var room = DbContext.Rooms.FirstOrDefault(r => r.Id == id);
+            var room = DbContextLista.Rooms.FirstOrDefault(r => r.Id == id);
 
             if (room == null)
             {
@@ -65,14 +65,14 @@ namespace RoomBookingV3.Controllers
         {
             if (ModelState.IsValid)
             {
-                var roomIndex = DbContext.Rooms.FindIndex(m => m.Id == room.Id);
+                var roomIndex = DbContextLista.Rooms.FindIndex(m => m.Id == room.Id);
 
                 if (roomIndex == -1)
                 {
                     return NotFound();
                 }
 
-                DbContext.Rooms[roomIndex] = room;
+                DbContextLista.Rooms[roomIndex] = room;
 
                 return RedirectToAction(nameof(Index));
             }
@@ -88,7 +88,7 @@ namespace RoomBookingV3.Controllers
                 return NotFound();
             }
 
-            var room = DbContext.Rooms.FirstOrDefault(r => r.Id == id);
+            var room = DbContextLista.Rooms.FirstOrDefault(r => r.Id == id);
 
             if (room == null)
             {
@@ -102,14 +102,14 @@ namespace RoomBookingV3.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var room = DbContext.Rooms.FirstOrDefault(r => r.Id == id);
+            var room = DbContextLista.Rooms.FirstOrDefault(r => r.Id == id);
 
             if (room == null)
             {
                 return NotFound();
             }
 
-            DbContext.Rooms.Remove(room);
+            DbContextLista.Rooms.Remove(room);
 
             return RedirectToAction("Index");
         }

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Hemsida.Models
 {
-    public static class DbContext
+    public static class DbContextLista
     {
         // Har listor som representerar vår databas istället för riktig.
         public static List<Room> Rooms { get; set; }
         public static List<Booking> Bookings { get; set; }
 
-        static DbContext()
+        static DbContextLista()
         {
             Rooms = new List<Room>();
             Bookings = new List<Booking>();
