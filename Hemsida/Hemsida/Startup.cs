@@ -55,7 +55,7 @@ namespace Hemsida
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Logins}/{action=Index}/{id?}");
+                    pattern: "{controller=Logins}/{action=Create}/{id?}");
             });
         }
     }

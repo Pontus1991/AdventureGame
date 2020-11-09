@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Hemsida.Data;
 using Hemsida.Models;
+using RoomBookingV3.Controllers;
 
 namespace Hemsida.Controllers
 {
