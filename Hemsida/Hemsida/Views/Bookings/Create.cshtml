@@ -10,10 +10,10 @@
                 <input class="form-control" asp-for="Booking.Booker" />
             </div>
             <div class="form-group">
-                <label class="control-label">Room</label>
-                <select class="form-control" asp-for="Booking.RoomId"
+                <label class="control-label">Room</label> <!--Rubriken till propertyn.-->
+                <select class="form-control" asp-for="Booking.RoomId">  <!--Vilken property det ska vara...-->
                         asp-items="@(new SelectList(Model.Rooms, "Id","Name"))">
-                    <option>Select room</option>
+                    <option>Select room</option>   <!--Pilen man trycker på (Rullgardin)-->
                 </select>
             </div>
             <div class="form-group">
