@@ -1,0 +1,35 @@
+﻿@model WebsiteSlutuppgift.Models.ViewModels.CreateBookingViewModel
+
+<h1>Create booking</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label class="control-label">Booker</label>
+                <input class="form-control" asp-for="Booking.Booker" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Room</label>
+                <select class="form-control" asp-for="Booking.TrackId"
+                        asp-items="@(new SelectList(Model.Tracks, "Id","Name"))">
+                    <option>Select room</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">From</label>
+                <input class="form-control" asp-for="Booking.From" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">To</label>
+                <input class="form-control" asp-for="Booking.To" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
