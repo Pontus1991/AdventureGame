@@ -4,6 +4,7 @@ using Hemsida.Data;
 using System;
 using System.Linq;
 
+
 namespace Hemsida.Models
 {
     public static class SeedData

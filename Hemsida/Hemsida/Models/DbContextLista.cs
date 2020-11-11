@@ -7,6 +7,7 @@ namespace Hemsida.Models
     public static class DbContextLista
     {
         // Har listor som representerar vår databas istället för riktig.
+        // Här ska jag lägga till banor sedan. 10 st som ska vara bokningsbara. 
         public static List<Room> Rooms { get; set; }
         public static List<Booking> Bookings { get; set; }
 

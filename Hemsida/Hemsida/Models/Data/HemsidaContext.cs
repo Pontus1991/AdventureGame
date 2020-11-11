@@ -3,7 +3,7 @@ using Hemsida.Models;
 
 namespace Hemsida.Data
 {
-    public class HemsidaContext : DbContext
+    public class HemsidaContext : DbContext  // Databasen!!
     {
         public HemsidaContext(DbContextOptions<HemsidaContext> options)
             : base(options)
