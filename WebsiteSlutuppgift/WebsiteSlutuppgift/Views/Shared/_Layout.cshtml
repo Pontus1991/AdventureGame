@@ -13,19 +13,25 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Bookings" asp-action="Index">Boka Din Bana Här!</a>
-                <BUTTON CLASS="NAVBAR-TOGGLER" TYPE="BUTTON" DATA-TOGGLE="COLLAPSE" DATA-TARGET=".NAVBAR-COLLAPSE" ARIA-CONTROLS="NAVBARSUPPORTEDCONTENT"
+                <a class="navbar-brand text-danger" asp-area="" asp-controller="Bookings" asp-action="Index">Boka Din Bana Här!</a>
+                @*<BUTTON CLASS="NAVBAR-TOGGLER" TYPE="BUTTON" DATA-TOGGLE="COLLAPSE" DATA-TARGET=".NAVBAR-COLLAPSE" ARIA-CONTROLS="NAVBARSUPPORTEDCONTENT"
                         ARIA-EXPANDED="FALSE" ARIA-LABEL="TOGGLE NAVIGATION">
                     <SPAN CLASS="NAVBAR-TOGGLER-ICON"></SPAN>
-                </BUTTON>
+                </BUTTON>*@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial.cshtml" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-danger btn btn-primary"  type="submit" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Privacy">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Privacy">Bowlingens Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Privacy">Information om regler och hur du lär dig att spela</a>
                         </li>
                     </ul>
                 </div>
@@ -40,7 +46,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Boka Din Bana Här! - <a asp-area="" asp-controller="Booking" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Kontakt - <a asp-area="" asp-controller="Booking" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
