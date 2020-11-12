@@ -10,22 +10,16 @@ using WebsiteSlutuppgift.Models;
 
 namespace WebsiteSlutuppgift.Controllers
 {
-    [Authorize] 
-    public class HomeController : Controller
+    public class RulesController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<RulesController> _logger_;
 
-        public HomeController(ILogger<HomeController> logger)
+        public RulesController(ILogger<RulesController> logger)
         {
-            _logger = logger;
+            _logger_ = logger;
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
@@ -37,3 +31,4 @@ namespace WebsiteSlutuppgift.Controllers
         }
     }
 }
+

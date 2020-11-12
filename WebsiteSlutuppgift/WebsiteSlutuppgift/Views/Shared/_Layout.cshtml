@@ -14,24 +14,20 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-danger" asp-area="" asp-controller="Bookings" asp-action="Index">Boka Din Bana Här!</a>
-                @*<BUTTON CLASS="NAVBAR-TOGGLER" TYPE="BUTTON" DATA-TOGGLE="COLLAPSE" DATA-TARGET=".NAVBAR-COLLAPSE" ARIA-CONTROLS="NAVBARSUPPORTEDCONTENT"
-                        ARIA-EXPANDED="FALSE" ARIA-LABEL="TOGGLE NAVIGATION">
-                    <SPAN CLASS="NAVBAR-TOGGLER-ICON"></SPAN>
-                </BUTTON>*@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial.cshtml" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-danger btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy">Kontakt</a>
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Home" asp-action="Privacy">Kontakt</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger btn btn-primary" asp-area="" asp-controller="Histories" asp-action="Index">Bowlingens Historia</a> <!--Histories måste vara samma namn som viewmappen. Detta för att datorn ska hitta var den ska leta.-->
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Histories" asp-action="Index">Bowlingens Historia</a> <!--Histories måste vara samma namn som viewmappen. Detta för att datorn ska hitta var den ska leta.-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-danger btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy">Information om regler och hur du lär dig att spela</a>
+                            <a class="nav-link text-danger" asp-area="" asp-controller="Rules" asp-action="Index">Information om regler och hur du lär dig att spela</a>
                         </li>
                     </ul>
                 </div>
