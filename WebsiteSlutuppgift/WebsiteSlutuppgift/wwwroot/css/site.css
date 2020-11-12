@@ -70,3 +70,17 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.Background-Color {
+    background-color: black;
+}
+
+.wrapper {
+    background-image: url(https://lh3.googleusercontent.com/proxy/NC50CebVhtKsIrqOllU3-PcrAC51Z64NcWmUQQu3PdO0Lq7gcgOZchSfBZI-e6yQfuZ55VI-EemG22qOPi8zsJVRqnqfz1AirwyK5KGmRqyplJVEq1ENtqq_vnttV8M61JtUJSY0);
+    background-position: center;
+    background-size: 100%;
+}
+
+
+
+
