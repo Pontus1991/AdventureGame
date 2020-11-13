@@ -13,10 +13,11 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
@@ -79,6 +80,22 @@ body {
     background-image: url(https://lh3.googleusercontent.com/proxy/NC50CebVhtKsIrqOllU3-PcrAC51Z64NcWmUQQu3PdO0Lq7gcgOZchSfBZI-e6yQfuZ55VI-EemG22qOPi8zsJVRqnqfz1AirwyK5KGmRqyplJVEq1ENtqq_vnttV8M61JtUJSY0);
     background-position: center;
     background-size: 100%;
+}
+
+.formcontrol {
+    height: 50px;
+}
+
+.animated-gif {
+    width: 120px;
+    height: 50px;
+}
+
+.w3-button {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
 }
 
 
