@@ -76,26 +76,11 @@ body {
     background-color: black;
 }
 
+
 .wrapper {
-    background-image: url(https://lh3.googleusercontent.com/proxy/NC50CebVhtKsIrqOllU3-PcrAC51Z64NcWmUQQu3PdO0Lq7gcgOZchSfBZI-e6yQfuZ55VI-EemG22qOPi8zsJVRqnqfz1AirwyK5KGmRqyplJVEq1ENtqq_vnttV8M61JtUJSY0);
+    background-image: url(https://lh3.googleusercontent.com/proxy/e3ekvOs83rqh-1664D7UBQ8XPAzzfhKITZOZRNuFiZJJXGDjX5_ct0_P8o4KHZXlcUkSi8uVURfq2zzHbUnnb-FX-DzSzNNhB31JRxV_lcL4kP1TIP2n5levq_KUjzbwaUaR6tiL);
     background-position: center;
     background-size: 100%;
-}
-
-.formcontrol {
-    height: 50px;
-}
-
-.animated-gif {
-    width: 120px;
-    height: 50px;
-}
-
-.w3-button {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    display: inline-block;
 }
 
 
