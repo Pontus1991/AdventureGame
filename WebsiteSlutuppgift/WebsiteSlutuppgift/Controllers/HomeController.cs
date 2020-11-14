@@ -9,8 +9,7 @@ using Microsoft.Extensions.Logging;
 using WebsiteSlutuppgift.Models;
 
 namespace WebsiteSlutuppgift.Controllers
-{
-    [Authorize] 
+{ 
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

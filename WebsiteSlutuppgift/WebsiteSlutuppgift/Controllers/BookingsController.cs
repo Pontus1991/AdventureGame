@@ -8,7 +8,7 @@ using WebsiteSlutuppgift.Models.ViewModels;
 namespace WebsiteSlutuppgift.Controllers
 {
 
-    [Authorize] // Med denna så kan man inte hoppa in i bokningar som utloggad !!! 
+    [Authorize] // Med [Authorize] så kan man inte hoppa in i bokningar som utloggad 
     public class BookingsController : Controller
     {
         public BookingsController()
@@ -20,7 +20,6 @@ namespace WebsiteSlutuppgift.Controllers
         public IActionResult Index()
         {
             var bookings = DbContext.Bookings;
-
             return View(bookings);
         }
 

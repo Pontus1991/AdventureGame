@@ -15,7 +15,7 @@ a {
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
-    border-color: #1861ac;
+    border-color: #e20001;
 }
 
 
@@ -65,22 +65,33 @@ body {
   font-family: "Montserrat", sans-serif; 
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
 }
 
 .Background-Color {
-    background-color: black;
+    background-color: #11050c;
 }
 
 
 .wrapper {
-    background-image: url(https://lh3.googleusercontent.com/proxy/e3ekvOs83rqh-1664D7UBQ8XPAzzfhKITZOZRNuFiZJJXGDjX5_ct0_P8o4KHZXlcUkSi8uVURfq2zzHbUnnb-FX-DzSzNNhB31JRxV_lcL4kP1TIP2n5levq_KUjzbwaUaR6tiL);
+    background-image: url(https://lh3.googleusercontent.com/proxy/oX9nLi8UGLu5f-CWd8VYKF5iR94FPlIWUmA-dgYhKCgnLDpsfoqsL9B-cVdaCjp8cG4uyiqH2oEdxMljN7os57fGGAwXVYdPHcxrF1MWF1eHN4U6ze0iEL5I5VSif-yDP7fyBk_W);
     background-position: center;
     background-size: 100%;
+}
+
+.minspecialform {
+    width: 250px;
+    margin: auto;
+    position: relative;
+}
+
+.animatedgif {
+    height: 80px;
+    width: 200px;
 }
 
 
