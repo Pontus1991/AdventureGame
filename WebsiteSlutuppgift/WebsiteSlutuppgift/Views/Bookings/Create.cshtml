@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label class="control-label">Bana</label>
                 <select class="form-control" asp-for="Booking.TrackId"
-                        asp-items="@(new SelectList(Model.Tracks, "Id","Name"))">
+                     asp-items="@(new SelectList(Model.Tracks, "Id","Name"))">
                     <option>Select track</option>
                 </select>
             </div>
@@ -25,7 +25,7 @@
                 <input class="form-control" asp-for="Booking.To" />
             </div>
             <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Slutför"/>
+                <input class="btn btn-primary" type="submit" value="Slutför" />
             </div>
         </form>
     </div>
@@ -34,3 +34,7 @@
 <div>
     <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

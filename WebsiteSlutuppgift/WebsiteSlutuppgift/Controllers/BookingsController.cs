@@ -36,7 +36,7 @@ namespace WebsiteSlutuppgift.Controllers
         public IActionResult Create(Booking booking)
         {
             var track = DbContext.Tracks.FirstOrDefault(r => r.Id == booking.TrackId);
-
+            
             if (track == null)
             {
                 return RedirectToAction(nameof(Create));
