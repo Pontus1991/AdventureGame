@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace WebsiteSlutuppgift.Models
 {
@@ -9,9 +8,16 @@ namespace WebsiteSlutuppgift.Models
     {
         public Guid Id { get; set; }
         public Guid TrackId { get; set; }
+
+        [Required(ErrorMessage = "Room name is required.")]
+        [StringLength(60, MinimumLength = 3)]
         public string TrackName { get; set; }
+
+        [Required(ErrorMessage = "Room name is required.")]
+        [StringLength(60, MinimumLength = 3)]
         public string Booker { get; set; }
-        public DateTime From { get; set; } // DateTime gör att vi får upp den där datumrutan i browsern. 
+
+        public DateTime From { get; set; } // DateTime gör att vi får upp datumrutan i browsern. 
         public DateTime To { get; set; }
     }
 }

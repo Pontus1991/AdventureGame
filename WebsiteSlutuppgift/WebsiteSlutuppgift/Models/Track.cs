@@ -7,8 +7,8 @@ namespace WebsiteSlutuppgift.Models
     {   
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "Track name is required.")]
-        [StringLength(7, ErrorMessage = "Track name cannot be more than 7 characters.")]
+        [Required(ErrorMessage = "Room name is required.")]
+        [StringLength(30, ErrorMessage = "Room name cannot be more than 30 characters.")]
         public string Name { get; set; }
     }
 }
