@@ -8,7 +8,7 @@ using WebsiteSlutuppgift.Models.ViewModels;
 namespace WebsiteSlutuppgift.Controllers
 {
 
-    [Authorize] // Med [Authorize] så kan man inte hoppa in i bokningar som utloggad 
+    [Authorize]  // (Roles = "Member, Admin")
     public class BookingsController : Controller
     {
         public BookingsController()

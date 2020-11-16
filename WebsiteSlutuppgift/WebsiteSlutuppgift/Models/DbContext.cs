@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebsiteSlutuppgift.Models
 {
-    public static class DbContext // Låtsasdatabasen 
+    public static class  DbContext // Låtsasdatabasen 
     {
         public static List<Track> Tracks { get; set; }
         public static List<Booking> Bookings { get; set; }
