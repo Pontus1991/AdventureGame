@@ -8,7 +8,7 @@ using WebsiteSlutuppgift.Models.ViewModels;
 namespace WebsiteSlutuppgift.Controllers
 {
 
-    [Authorize]  // (Roles = "Member, Admin")
+    [Authorize]  // Måste vara inloggad för att kunna boka. 
     public class BookingsController : Controller
     {
         public BookingsController()

@@ -44,7 +44,7 @@ namespace WebsiteSlutuppgift.Areas.Identity.Pages.Account
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        public class InputModel
+        public class InputModel // Modellklass för User.
         {
             [Required]
             [DataType(DataType.Text)]
