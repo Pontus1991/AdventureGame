@@ -76,10 +76,15 @@ body {
     background-color: #11050c;
 }
 
+.Background-Color2 {
+    background-color: #410000;
+}
+
 
 .wrapper {
-    background-image: url(https://lh3.googleusercontent.com/proxy/xu4ZzDNjkXkt_ovqdInroKQgOwQc_vG2_FpplTV13clBjqErA76ngFofuQCwl32vQSzM4w9YadfIO-bEpQr_GzGGGOCz1EFFBUCLLGds-2p4RDYubzBpV6-N6yYJWX7Cz29iVflF);
+    background-image: url(https://lh3.googleusercontent.com/proxy/ygTwWcZ0H_gHpEH8fWUc33ZT3Rr8jjE5U5bIqozWSLrnuCkLwKqT_45heMXlWCpZgkdpjieQmlqx_M5LwjabTtSv8GABwGYIZYbWcUSXF-RDzAlBivSbKRBE2dHY-wX4TORSuNRI);
     background-position: center;
+    background-color: #410000;
     background-size: 100%;
 }
 

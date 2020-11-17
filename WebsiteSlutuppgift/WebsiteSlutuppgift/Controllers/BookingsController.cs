@@ -87,6 +87,7 @@ namespace WebsiteSlutuppgift.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Admin")] 
         // GET: Bookings/Delete/5
         public IActionResult Delete(Guid id)
         {
