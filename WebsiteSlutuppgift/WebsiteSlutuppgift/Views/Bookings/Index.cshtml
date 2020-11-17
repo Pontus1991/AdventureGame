@@ -5,22 +5,22 @@
 }
 
 <div class="text-center text-danger Background-Color">
-    <a button class="btn btn-primary" asp-action="Create">Klicka här för att boka</a>
-    <h4 class="text-left">Bokningslista nedan</h4>
+    <a button class="btn btn-primary" asp-action="Create">Click here to reserve a lane!</a>
+    <h4 class="text-left">Bookinglist below</h4>
     <table class="table text-danger center">
         <thead>
             <tr>
                 <th>
-                   <u>Namn</u>
+                   <u>Name</u>
                 </th>
                 <th>
-                    <u>Bana</u>
+                    <u>Lane</u>
                 </th>
                 <th>
-                    <u>Från</u>
+                    <u>From</u>
                 </th>
                 <th>
-                    <u>Till</u>
+                    <u>To</u>
                 </th>            
             </tr>
         </thead>
@@ -34,7 +34,11 @@
                     <td>@booking.To</td>
                     <td>
                         <a asp-action="Delete" asp-route-id="@booking.Id">Delete</a>
+                        <i class="far fa-trash-alt"></i>
+                    </td>
+                    <td>
                         <a asp-action="Edit" asp-route-id="@booking.Id">Edit</a>
+                        <i class="fas fa-edit"></i>
                     </td>
                 </tr>
             }

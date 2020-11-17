@@ -22,7 +22,6 @@ a {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
-  border-color: #1861ac;
 }
 
 /* Sticky footer styles
@@ -94,10 +93,24 @@ body {
     position: relative;
 }
 
+.minspecialform2 {
+    width: 250px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+}
+
 .animatedgif {
     height: 80px;
     width: 200px;
 }
+
+.heightform {
+    height: 400px;
+}
+
+
+
 
 
 
