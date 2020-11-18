@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label class="control-label">Lane</label>
                 <select class="form-control" asp-for="Booking.TrackId"
-                        asp-items="@(new SelectList(Model.Tracks, "Id","Name"))">
+                        asp-items="@(new SelectList(Model.Tracks, "Id","Name"))"> <!--Dropdownmeny av alla rum som finns. två värden. Id och visningsnamn.-->
                     <option>Select track</option>
                 </select>
             </div>

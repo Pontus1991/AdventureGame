@@ -6,7 +6,9 @@ namespace WebsiteSlutuppgift.Models
 {
     public class Booking
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; }  // Id är till för att vi ska kunna skapa objekt utan namn.
+
+        // En boking utan ett tracksid dvs banans id fyller ingen funktion
         public Guid TrackId { get; set; }
 
         [Required(ErrorMessage = "Room name is required.")]
