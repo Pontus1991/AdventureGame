@@ -42,7 +42,7 @@ namespace WebsiteSlutuppgift.Controllers
                 return RedirectToAction(nameof(Create));
             }
 
-            booking.Id = Guid.NewGuid();
+            booking.Id = Guid.NewGuid(); 
             booking.TrackName = track.Name;
 
             DbContext.Bookings.Add(booking);
