@@ -1,10 +1,9 @@
 ﻿@model WebsiteSlutuppgift.Models.ViewModels.EditBookingViewModel
 
-<h1 class="text-center Background-Color col-md-4 minspecialform">Edit booking</h1>
 <div class="text-center Background-Color minspecialform">
     <h1 class="text-center text-danger Background-Color">Edit booking</h1>
-    <div class="col-md-4">
-        <form asp-action="Edit" method="post">
+    <div class="text-danger">
+        <form asp-action="Edit" method="post" class="text-center">
             <input hidden asp-for="Booking.Id" />
             <div class="form-group">
                 <label class="control-label">Name</label>
@@ -25,12 +24,10 @@
                 <input class="form-control" asp-for="Booking.To" />
             </div>
             <div class="form-group">
+                <a asp-action="Index">Back to bookinglist</a>
                 <input class="btn btn-primary" type="submit" value="Save" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to bookinglist</a>
-</div>

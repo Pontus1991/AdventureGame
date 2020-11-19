@@ -19,10 +19,12 @@
             <div class="form-group">
                 <label class="control-label">From</label>
                 <input class="form-control" asp-for="Booking.From" />
+                <span asp-validation-for="Booking.From" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">To</label>
                 <input class="form-control" asp-for="Booking.To" />
+                <span asp-validation-for="Booking.To" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <a asp-action="Index">Back to List</a>

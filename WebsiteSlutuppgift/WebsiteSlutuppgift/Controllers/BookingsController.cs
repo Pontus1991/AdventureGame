@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using WebsiteSlutuppgift.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using WebsiteSlutuppgift.Models;
 using WebsiteSlutuppgift.Models.ViewModels;
-using System.Collections.Generic;
 
 namespace WebsiteSlutuppgift.Controllers
 {
 
-    [Authorize]  // Måste vara inloggad för att kunna boka. 
-    public class BookingsController : Controller
+    [Authorize]  // (Roles = "Member, Admin")
+    public class BookingsController : Controller 
     {
         public BookingsController()
         {
@@ -36,45 +37,51 @@ namespace WebsiteSlutuppgift.Controllers
         // från vyn till metoden i controllen
         public IActionResult Create(Booking booking)
         {
-            //// 1. Hämta it alla bokning som har somma roomId som den nya bokningen 
-            /// /// 2. Kolla om något av dessa bokningar har överlappande datum. Linqqueryn har hämtat ut alla bokningar i listan och jämför med det rum vi försöker lägga bokningen på.
-            /// Foreachen: Båda villkorlen måste vara uppfyllda för att man inte ska kunna boka längre fram där det kanske finns en bokning och tvärtom
-            
-
-            List<Booking> oldBookings = DbContext.Bookings.Where(b => b.TrackId == booking.TrackId).ToList();
-
-            Boolean occupied = false;
-            foreach (var oldBooking in oldBookings)
+            if (!ValidateBooking(booking))
             {
-                // Kolla om from är inom intervaölöet för bokninge
-                // (booking.From > oldBooking.From && booking.To < oldBooking.To)
-
-                // Kolla om to är inom intervallet för bokiningen 
-                // (booking.From > oldBooking.To && booking.To < oldBooking.To)
-
-                //  Tagit bort alla likamededtecken för att inte krocka på heltimme etc.. 
-
-                if ((booking.From > oldBooking.From && booking.From < oldBooking.To) 
-                   || (booking.To > oldBooking.From && booking.To < oldBooking.To)) // Måste göra två checkar
-                {
-                    occupied = true;
-                }
+                var createBookingViewModel = new CreateBookingViewModel() { Tracks = DbContext.Tracks, Booking = booking };
+                return View(createBookingViewModel);
             }
 
+            // vi hämtar ut det valda rummets namn
+            var trackName = DbContext.Tracks.FirstOrDefault(r => r.Id == booking.TrackId).Name;
 
-            var track = DbContext.Tracks.FirstOrDefault(r => r.Id == booking.TrackId);
+            booking.Id = Guid.NewGuid();
+            booking.TrackName = trackName;
             
-            //if (track == null)
-            //{
-            //    return RedirectToAction(nameof(Create));
-            //}
-
-            booking.Id = Guid.NewGuid(); 
-            booking.TrackName = track.Name;
 
             DbContext.Bookings.Add(booking);
 
             return RedirectToAction("Index");
+        }
+
+        private bool ValidateBooking(Booking booking)
+        {
+            bool isValid = true;
+
+            // Check if from date is after To date
+            if (booking.From > booking.To)
+            {
+                ModelState.AddModelError("Booking.From", "Start date cannot be after end date");
+                var createBookingViewModel = new CreateBookingViewModel() { Tracks = DbContext.Tracks, Booking = booking };
+                isValid = false;
+            }
+
+            //1. Hämta ut alla bokning som har samma roomId som den nya bokningen
+            List<Booking> bookingsFromDb = DbContext.Bookings.Where(b => b.TrackId == booking.TrackId).ToList();
+
+            //2. Kolla om något av dessa bokningar har överlappande datum
+            foreach (var oldBooking in bookingsFromDb)
+            {
+                if (DateHelpers.HasSharedDateIntervals(booking.From, booking.To, oldBooking.From, oldBooking.To))
+                {
+                    ModelState.AddModelError("Booking.From", "Date already occupied.");
+                    var createBookingViewModel = new CreateBookingViewModel() { Tracks = DbContext.Tracks, Booking = booking };
+                    isValid = false;
+                }
+            }
+
+            return isValid;
         }
 
         // GET: Bookings/Edit/5
@@ -114,7 +121,7 @@ namespace WebsiteSlutuppgift.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize(Roles = "Admin")] 
+        //[Authorize(Roles = "Admin")] 
         // GET: Bookings/Delete/5
         public IActionResult Delete(Guid id)
         {
