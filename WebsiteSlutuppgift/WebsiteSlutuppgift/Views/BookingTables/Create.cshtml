@@ -1,4 +1,4 @@
-﻿@model WebsiteSlutuppgift.Models.ViewModels.CreateBookingViewModel
+﻿@model WebsiteSlutuppgift.Models.ViewModels.CreateBookingTableViewModel
 
 <div class="text-center Background-Color col-md-4 minspecialform">
     <h1 class="text-center text-danger Background-Color">Please fill in the fields below</h1>
@@ -6,25 +6,25 @@
         <form asp-action="Create" method="post" class="text-center">
             <div class="form-group text-center">
                 <label class="control-label">Name</label>
-                <input class="form-control" asp-for="Booking.Booker" />
-                <span asp-validation-for="Booking.Booker" class="text-danger"></span>
+                <input class="form-control" asp-for="BookingTable.TableBooker" />
+                <span asp-validation-for="BookingTable.TableBooker" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Lane</label>
-                <select class="form-control" asp-for="Booking.TrackId"
-                        asp-items="@(new SelectList(Model.Tracks, "Id","Name"))"> <!--Dropdownmeny av alla spår som finns. två värden. Id och visningsnamn.-->
+                <select class="form-control" asp-for="BookingTable.TableId"
+                    asp-items="@(new SelectList(Model.Tables, "Id","Name"))"><!--Dropdownmeny av alla bord som finns. två värden. Id och visningsnamn.-->
                     <option>Select track</option>
                 </select>
             </div>
             <div class="form-group">
                 <label class="control-label">From</label>
-                <input class="form-control" asp-for="Booking.From" />
-                <span asp-validation-for="Booking.From" class="text-danger"></span>
+                <input class="form-control" asp-for="BookingTable.From" />
+                <span asp-validation-for="BookingTable.From" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">To</label>
-                <input class="form-control" asp-for="Booking.To" />
-                <span asp-validation-for="Booking.To" class="text-danger"></span>
+                <input class="form-control" asp-for="BookingTable.To" />
+                <span asp-validation-for="BookingTable.To" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <a asp-action="Index">Back to List</a>

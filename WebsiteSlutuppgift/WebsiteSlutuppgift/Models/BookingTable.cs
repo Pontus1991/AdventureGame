@@ -1,25 +1,24 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace WebsiteSlutuppgift.Models
 {
-    public class Booking
+    public class BookingTable
     {
         public Guid Id { get; set; }  // Id är till för att vi ska kunna skapa objekt utan namn.
 
-        // En boking utan ett tracksid dvs banans id fyller ingen funktion
-        public Guid TrackId { get; set; }
+        public Guid TableId { get; set; }
 
-        [Required(ErrorMessage = "Track name is required.")]
+        [Required(ErrorMessage = "Table name is required.")]
         [StringLength(60, MinimumLength = 3)]
-        public string TrackName { get; set; }
+        public string TableName { get; set; }
 
-        [Required(ErrorMessage = "Track name is required.")]
+        [Required(ErrorMessage = "Table name is required.")]
         [StringLength(60, MinimumLength = 3)]
-        public string Booker { get; set; }
+        public string TableBooker { get; set; }
 
         public DateTime From { get; set; } // DateTime gör att vi får upp datumrutan i browsern. 
         public DateTime To { get; set; }
+        
     }
 }

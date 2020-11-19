@@ -1,0 +1,35 @@
+﻿@model WebsiteSlutuppgift.Models.BookingTable
+
+
+<div class="text-center Background-Color minspecialform">
+    <h1 class="text-danger">Delete</h1>
+    <h3 class="text-danger">Are you sure you want to delete this booking?</h3>
+    <div class="text-danger">
+        <form asp-action="DeleteConfirmed" method="post" class="text-center">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label class="control-label">Booker</label>
+                <input disabled class="form-control" asp-for="TableBooker" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Room name</label>
+                <input disabled class="form-control" asp-for="TableName" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">From</label>
+                <input disabled class="form-control" asp-for="From" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">To</label>
+                <input disabled class="form-control" asp-for="To" />
+            </div>
+            <div class="form-group">
+                <a asp-action="Index">Back to bookinglist</a>
+                <input class="btn btn-danger" type="submit" value="Delete" />
+            </div>
+
+        </form>
+    </div>
+</div>

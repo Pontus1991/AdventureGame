@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BookingTable>
+
+@{
+    ViewData["Title"] = "List of bookings";
+}
+
+<div class="text-center text-danger Background-Color">
+    <div class="link-background text-danger">
+        <a button class="btn middle text-danger" asp-action="Create">Click here to reserve a lane!</a>
+    </div>
+    <h4 class="text-left">Bookinglist below</h4>
+    <table class="table text-danger center">
+        <thead>
+            <tr>
+                <th>
+                    <u>Name</u>
+                </th>
+                <th>
+                    <u>Lane</u>
+                </th>
+                <th>
+                    <u>From</u>
+                </th>
+                <th>
+                    <u>To</u>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.TableBooker</td>
+                    <td>@booking.TableName</td>
+                    <td>@booking.From</td>
+                    <td>@booking.To</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@booking.Id">Delete</a>
+                        <i class="far fa-trash-alt"></i>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@booking.Id">Edit</a>
+                        <i class="fas fa-edit"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

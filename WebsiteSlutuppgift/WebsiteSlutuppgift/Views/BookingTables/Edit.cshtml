@@ -1,0 +1,32 @@
+﻿@model WebsiteSlutuppgift.Models.ViewModels.EditBookingTableViewModel
+
+<div class="text-center Background-Color minspecialform">
+    <h1 class="text-center text-danger Background-Color">Edit booking</h1>
+    <div class="text-danger">
+        <form asp-action="Edit" method="post" class="text-center">
+            <input hidden asp-for="BookingTable.Id" />
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input class="form-control" asp-for="BookingTable.TableBooker" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Lane</label>
+                <select class="form-control" asp-for="BookingTable.TableId"
+                        asp-items="@(new SelectList(Model.Tables, "Id","Name"))">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">From</label>
+                <input class="form-control" asp-for="BookingTable.From" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">To</label>
+                <input class="form-control" asp-for="BookingTable.To" />
+            </div>
+            <div class="form-group">
+                <a asp-action="Index">Back to bookinglist</a>
+                <input class="btn btn-primary" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
