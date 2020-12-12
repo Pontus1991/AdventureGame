@@ -15,5 +15,7 @@ namespace OnlineBibliotek.Models
         public Customer Customer { get; set; }
 
         public int CustomerId { get; set; }
+
+        public ICollection<Rental_Book> Rental_Book { get; set; }
     }
 }

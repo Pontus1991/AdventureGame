@@ -11,6 +11,8 @@ namespace OnlineBibliotek.Models
         public string Author_FirstName { get; set; }
         public string Author_LastName { get; set; }
 
+        public ICollection<Author_Book> Author_Book { get; set; } // För att den ska kunna komma in från Booktabellen via kopplingstabellen.
+
 
 
 

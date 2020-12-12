@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBibliotek.Models
 {
-    public class Rental_Book
+    public class Rental_Book  // Kopplingstabell
     {
         public int RentalId { get; set; }
         public int BookId { get; set; }
