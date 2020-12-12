@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class LibraryCard
     {
-        public int LibraryCard_id { get; set; }
+        public int LibraryCardId { get; set; }
         public int Library_Card { get; set; }
     }
 }

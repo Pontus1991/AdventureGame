@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class ReleaseDate
     {
-        public int ReleaseDate_id { get; set; }
+        public int ReleaseDateId { get; set; }
         public int Release_Date { get; set; }
     }
 }

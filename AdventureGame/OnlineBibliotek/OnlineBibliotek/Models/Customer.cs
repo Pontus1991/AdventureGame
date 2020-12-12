@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class Customer
     {
-        public int Customer_id { get; set; }
+        public int CustomerId { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
 

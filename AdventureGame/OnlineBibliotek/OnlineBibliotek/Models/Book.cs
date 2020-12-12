@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class Book
     {
-        public int Book_id { get; set; }
+        public int Bookid { get; set; }
         public int boktitel { get; set; }
         public int isbn { get; set; }
 

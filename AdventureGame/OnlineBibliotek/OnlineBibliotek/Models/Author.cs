@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class Author
     {
-        public int Author_Id { get; set; }
+        public int AuthorId { get; set; }
         public string Author_FirstName { get; set; }
         public string Author_LastName { get; set; }
 

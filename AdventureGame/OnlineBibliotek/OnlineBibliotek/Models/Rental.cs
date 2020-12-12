@@ -7,7 +7,7 @@ namespace OnlineBibliotek.Models
 {
     public class Rental
     {
-        public int Rental_id { get; set; }
+        public int RentalId { get; set; }
         public int? Rental_Date { get; set; } // Able to be NULL
         public int? Returning_Date { get; set; } // Able to be NULL
         public bool OnLoan { get; set; }
