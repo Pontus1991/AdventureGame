@@ -10,5 +10,11 @@ namespace SlutUppgiftAPI.Models
         public int LibraryId { get; set; }
         public int? RentalId { get; set; }
         public int BookId { get; set; }
+
+        public List<Inventory> Inventories { get; set; }
+
+        public List<Rental> Rentals { get; set; }
+
+
     }
 }

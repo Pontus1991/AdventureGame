@@ -12,5 +12,7 @@ namespace SlutUppgiftAPI.Models
         public List<Customer> Customers { get; set; }
         public Library Library { get; set; }
 
+        public int? LibraryId { get; set; } // ForeignKey
+
     }
 }

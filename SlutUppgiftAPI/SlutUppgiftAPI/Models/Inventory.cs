@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SlutUppgiftAPI.Models
 {
-    public class Inventory // Kopplingstabell mellan Book och library. 
+    public class Inventory // Lista av böcker samt böcker kan ha ETT library..  
     {
         public int IventoryId { get; set; }
         public int? BookId { get; set; }
