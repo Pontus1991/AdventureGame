@@ -11,7 +11,7 @@ namespace OnlineBibliotek.Models
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
 
-        public LibraryCard LibraryCard { get; set; }
+        public LibraryCard LibraryCard { get; set; } //  ska vara lista om man ska kunna ha fler librarykort. 
 
         public int LibraryCardId { get; set; }
     }
