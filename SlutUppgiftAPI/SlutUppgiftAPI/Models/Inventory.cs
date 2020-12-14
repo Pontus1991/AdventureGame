@@ -7,7 +7,7 @@ namespace SlutUppgiftAPI.Models
 {
     public class Inventory // Lista av böcker samt böcker kan ha ETT library..  
     {
-        public int IventoryId { get; set; }
+        public int InventoryId { get; set; }
         public int? BookId { get; set; }
         public List<Book> Books { get; set; }
         public Library Library { get; set; }
