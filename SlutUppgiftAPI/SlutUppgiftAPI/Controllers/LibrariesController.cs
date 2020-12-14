@@ -28,7 +28,7 @@ namespace SlutUppgiftAPI.Controllers
             return await _context.Libraries.ToListAsync();
         }
 
-        // GET: api/Libraries/5
+        // GET: api/Libraries/5tghjgh
         [HttpGet("{id}")]
         public async Task<ActionResult<Library>> GetLibrary(int id)
         {
