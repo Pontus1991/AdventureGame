@@ -34,6 +34,7 @@ namespace SlutUppgiftAPI.Data
                 .HasOne(pt => pt.Book)//relationen one
                 .WithMany(p => p.Book_Authors)//relationen many. 
                 .HasForeignKey(pt => pt.BookId);//FK kopplingen som vi gjort på rad 25&26
+            // .Ondelete(DeleteBehavior.Restrict)
 
             // säga till EF vad relationen mellan relationen mellan studencourse och studen är
             // sätta att courseId är foreign Key. 
