@@ -23,14 +23,20 @@ namespace SlutUppgiftAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book_Author>()
-                .HasKey(t => new { t.AuthorId, t.BookId });//FK TILLDELNING
+            // Skapa compisite primary key
+            // student och courseId är tillsammans alltså primayKey
+            modelBuilder.Entity<Book_Author>() 
+                .HasKey(t => new { t.AuthorId, t.BookId });//FK TILLDELNING.
 
+            // säga till EF vad relationen mellan relationen mellan studencourse och studen är
+            // sätta att studentId är foreign Key. 
             modelBuilder.Entity<Book_Author>()
                 .HasOne(pt => pt.Book)//relationen one
-                .WithMany(p => p.Book_Authors)//relationen many
+                .WithMany(p => p.Book_Authors)//relationen many. 
                 .HasForeignKey(pt => pt.BookId);//FK kopplingen som vi gjort på rad 25&26
 
+            // säga till EF vad relationen mellan relationen mellan studencourse och studen är
+            // sätta att courseId är foreign Key. 
             modelBuilder.Entity<Book_Author>()
                 .HasOne(pt => pt.Author)
                 .WithMany(t => t.Book_Authors)

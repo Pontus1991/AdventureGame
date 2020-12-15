@@ -10,7 +10,7 @@ using SlutUppgiftAPI.Models;
 
 namespace SlutUppgiftAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     [ApiController]
     public class AuthorsController : ControllerBase
     {
