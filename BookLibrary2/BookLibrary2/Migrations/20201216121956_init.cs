@@ -12,7 +12,7 @@ namespace BookLibrary2.Migrations
                 columns: table => new
                 {
                     CustomerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "1, 1"), // Börjar på ett och lägger till ett varje gång. Seedar automatiskt. Man behöver inte skriva in id när man till ex skapar en kund. 
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     LibraryCardNumber = table.Column<int>(nullable: false)
