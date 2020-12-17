@@ -84,6 +84,11 @@ namespace BookLibrary2.Controllers
             rental.ReturnDate = DateTime.Now.AddDays(30);//Detta gör att vi sätter returndate till 30dagar ifrån när posten gjordes!
             rental.Rented = true;
 
+            //if (DateTime.Now 31) // Funkar inte om det inte är en int? 
+            //{
+            //   rental.RentalId == null;
+            //}
+
             _context.Rentals.Add(rental);
             await _context.SaveChangesAsync();
 
@@ -95,7 +100,7 @@ namespace BookLibrary2.Controllers
         public async Task<ActionResult<Rental>> DeleteRental(int id)
         {
             var rental = await _context.Rentals.FindAsync(id);
-            if (rental == null)
+            if (rental == null) // Hittar den inte angivet id så kommer det visas errormeddelanden i postman. 
             {
                 return NotFound();
             }
