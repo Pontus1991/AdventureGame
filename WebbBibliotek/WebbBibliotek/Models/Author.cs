@@ -9,6 +9,7 @@ namespace WebbBibliotek.Models
     {
         public int AuthorId { get; set; }
         public string AuthorFirstName { get; set; }
-        public int AuthorLastName { get; set; }
+        public string AuthorLastName { get; set; }
+        public List<Book_Author> Book_Authors { get; set; }
     }
 }
