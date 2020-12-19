@@ -14,5 +14,6 @@ namespace WebbBibliotek.Models
 
         public List<Rental> Rentals { get; set; }
         public int? RentalId { get; set; }
+
     }
 }
