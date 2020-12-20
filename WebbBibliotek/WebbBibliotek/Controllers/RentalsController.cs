@@ -80,7 +80,7 @@ namespace WebbBibliotek.Controllers
         [HttpPost]
         public async Task<ActionResult<Rental>> PostRental(Rental rental)
         {
-            rental.RentalDate = DateTime.Now;//Detta sätter vår rentaldate, i Postman, till dagens datum när posten görs!
+            rental.RentalDate = DateTime.Now;//Detta sätter vår rentaldate, i Postman, till dagens datum när posten görs!!
             rental.ReturnDate = DateTime.Now.AddDays(30);//Detta gör att vi sätter returndate till 30dagar ifrån när posten gjordes!
             rental.Rented = true;
 
