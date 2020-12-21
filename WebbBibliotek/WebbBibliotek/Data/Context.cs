@@ -19,7 +19,7 @@ namespace WebbBibliotek.Data
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Book_Author> Book_Authors { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) // Måste säga åt entity Framework hur vi vill att denna many-tomany-ralation ska vara. 
         {
             modelBuilder.Entity<Book_Author>()
                    .HasKey(sc => new { sc.AuthorId, sc.BookId });
