@@ -15,5 +15,27 @@ namespace WebbBibliotek.Models
         public List<Rental> Rentals { get; set; }
         public int? RentalId { get; set; }
 
+        public bool Available
+        {
+            get
+            {
+                if (Rentals == null)
+                {
+                    return true;
+                }
+                else if (Rentals.Count == 0)
+                {
+                    return true;
+                }
+                else if (Rentals.All(r => r.Returned))
+                {
+                    return true;
+                }
+
+                return true; 
+            }
+                
+        }
+
     }
 }

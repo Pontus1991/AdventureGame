@@ -22,17 +22,17 @@ namespace WebbBibliotek.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder) // Måste säga åt entity Framework hur vi vill att denna many-tomany-ralation ska vara. 
         {
             modelBuilder.Entity<Book_Author>()
-                   .HasKey(sc => new { sc.AuthorId, sc.BookId });
+                .HasKey(ba => new { ba.BookId, ba.AuthorId });
 
             modelBuilder.Entity<Book_Author>()
-                .HasOne(sc => sc.Author)
-                .WithMany(s => s.Book_Authors)
-                .HasForeignKey(sc => sc.AuthorId);
+                .HasOne(ba => ba.Book)
+                .WithMany(b => b.Book_Authors)
+                .HasForeignKey(ba => ba.BookId);
 
             modelBuilder.Entity<Book_Author>()
-                .HasOne(sc => sc.Book)
-                .WithMany(c => c.Book_Authors)
-                .HasForeignKey(sc => sc.BookId);
+                .HasOne(ba => ba.Author)
+                .WithMany(a => a.Book_Authors)
+                .HasForeignKey(ba => ba.AuthorId);
 
 
         }
