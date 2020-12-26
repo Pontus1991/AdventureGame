@@ -90,6 +90,41 @@ namespace WebbBibliotek.Controllers
             return CreatedAtAction("GetRental", new { id = rental.RentalId }, rental);
         }
 
+        //koden gör att man ser om boken är utlånad eller inte och lämnar tillbaka boken
+        [HttpPut("return/{id}")]
+        public async Task<IActionResult> ReturnRental(int id, Rental rental)
+        {
+            if (id != rental.RentalId)
+            {
+                return BadRequest();
+            }
+
+            rental.Rented = false;
+
+            rental.ReturnDate = DateTime.Now;
+
+            _context.Entry(rental).State = EntityState.Modified;
+
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RentalExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
         // DELETE: api/Rentals/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Rental>> DeleteRental(int id)

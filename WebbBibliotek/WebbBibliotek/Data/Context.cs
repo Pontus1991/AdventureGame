@@ -34,6 +34,11 @@ namespace WebbBibliotek.Data
                 .WithMany(a => a.Book_Authors)
                 .HasForeignKey(ba => ba.AuthorId);
 
+            //Lånedatum och Returdatum (DateTime)
+            modelBuilder.Entity<Rental>()
+            .Property(l => l.RentalDate)
+            .HasDefaultValueSql("GETDATE()");
+
 
         }
 

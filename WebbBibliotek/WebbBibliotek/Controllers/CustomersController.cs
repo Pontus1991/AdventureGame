@@ -104,14 +104,14 @@ namespace WebbBibliotek.Controllers
 
         /// fredriks saker
        
-        [HttpPost("{customerId}/rentFilm/{filmId}")]
+        [HttpPost("{customerId}/rentBook/{BookId}")]
         public async Task<ActionResult<Customer>> RentBook(int customerId, int bookId)
         {
             var customer = await _context.Customers.FirstOrDefaultAsync();
 
             if (customer == null)
             {
-                return NotFound();
+                return NotFound("User not found");
             }
 
             var inventory = await _context.Inventories
@@ -128,7 +128,7 @@ namespace WebbBibliotek.Controllers
 
             if (availableBook == null) // Kommer inte hoppa till nästa steg om film not in stock. 
             {
-                return BadRequest("Film not in stock");
+                return BadRequest("Book not in stock");
             }
 
             var rental = new Rental()
@@ -160,7 +160,7 @@ namespace WebbBibliotek.Controllers
             //    }
             //}
 
-            return Ok();
+            //return Ok();
         }
 
         /// fredriks saker
