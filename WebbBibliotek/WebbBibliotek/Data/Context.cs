@@ -11,6 +11,7 @@ namespace WebbBibliotek.Data
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Rental> Rentals { get; set; }
@@ -18,6 +19,7 @@ namespace WebbBibliotek.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Book_Author> Book_Authors { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) // Måste säga åt entity Framework hur vi vill att denna many-tomany-ralation ska vara. 
         {
@@ -39,7 +41,19 @@ namespace WebbBibliotek.Data
             .Property(l => l.RentalDate)
             .HasDefaultValueSql("GETDATE()");
 
+            ///////////////////////////////////////////////   Vårra rentals är en kopplingstabell
+            ///modelBuilder.Entity<Rental>()
+            //    .HasKey(sc => new { sc.InventoryId, sc.CustomerId });
 
+            //modelBuilder.Entity<Rental>()
+            //    .HasOne(sc => sc.Inventory)
+            //    .WithMany(s => s.Rentals)
+            //    .HasForeignKey(sc => sc.InventoryId);
+
+            //modelBuilder.Entity<Rental>()
+            //    .HasOne(sc => sc.Customer)
+            //    .WithMany(c => c.Rentals)
+            //    .HasForeignKey(sc => sc.CustomerId);
         }
 
     }

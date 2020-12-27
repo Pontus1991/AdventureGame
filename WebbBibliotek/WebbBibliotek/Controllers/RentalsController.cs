@@ -90,7 +90,8 @@ namespace WebbBibliotek.Controllers
             return CreatedAtAction("GetRental", new { id = rental.RentalId }, rental);
         }
 
-        //koden gör att man ser om boken är utlånad eller inte och lämnar tillbaka boken
+        // När man ä'r i rentals på weblösarn och man trycker salsh och id som blir rentalid. Då kommer den 1 sätta rentedproppen tillfalse och soen kommer den sätter returndaten till Now. 
+        // Dvs bopken lämnas in och stölla om boolen till false. 
         [HttpPut("return/{id}")]
         public async Task<IActionResult> ReturnRental(int id, Rental rental)
         {

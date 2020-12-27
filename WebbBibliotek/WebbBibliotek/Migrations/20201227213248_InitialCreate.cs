@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebbBibliotek.Migrations
 {
-    public partial class init : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,26 +49,18 @@ namespace WebbBibliotek.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Rentals",
+                name: "Users",
                 columns: table => new
                 {
-                    RentalId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RentalDate = table.Column<DateTime>(nullable: true),
-                    ReturnDate = table.Column<DateTime>(nullable: true),
-                    Rented = table.Column<bool>(nullable: false),
-                    InventoryId = table.Column<int>(nullable: true),
-                    CustomerId = table.Column<int>(nullable: true)
+                    Username = table.Column<string>(nullable: true),
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rentals", x => x.RentalId);
-                    table.ForeignKey(
-                        name: "FK_Rentals_Inventories_InventoryId",
-                        column: x => x.InventoryId,
-                        principalTable: "Inventories",
-                        principalColumn: "InventoryId",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -77,10 +69,10 @@ namespace WebbBibliotek.Migrations
                 {
                     BookId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(nullable: true),
-                    ReleaseYear = table.Column<int>(nullable: false),
+                    Title = table.Column<string>(maxLength: 40, nullable: false),
+                    ReleaseYear = table.Column<string>(type: "char(4)", nullable: false),
                     ISBN = table.Column<long>(nullable: false),
-                    RatingId = table.Column<int>(nullable: true),
+                    RatingId = table.Column<int>(nullable: false),
                     InventoryId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -97,28 +89,36 @@ namespace WebbBibliotek.Migrations
                         column: x => x.RatingId,
                         principalTable: "Ratings",
                         principalColumn: "RatingId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Rentals",
                 columns: table => new
                 {
-                    CustomerId = table.Column<int>(nullable: false)
+                    RentalId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerFirstName = table.Column<string>(nullable: true),
-                    CustomerLastName = table.Column<string>(nullable: true),
-                    LibraryCard = table.Column<int>(nullable: false),
-                    RentalId = table.Column<int>(nullable: true)
+                    RentalDate = table.Column<DateTime>(nullable: true, defaultValueSql: "GETDATE()"),
+                    ReturnDate = table.Column<DateTime>(nullable: true),
+                    Rented = table.Column<bool>(nullable: false),
+                    InventoryId = table.Column<int>(nullable: true),
+                    UserId = table.Column<int>(nullable: true),
+                    CustomerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.CustomerId);
+                    table.PrimaryKey("PK_Rentals", x => x.RentalId);
                     table.ForeignKey(
-                        name: "FK_Customers_Rentals_RentalId",
-                        column: x => x.RentalId,
-                        principalTable: "Rentals",
-                        principalColumn: "RentalId",
+                        name: "FK_Rentals_Inventories_InventoryId",
+                        column: x => x.InventoryId,
+                        principalTable: "Inventories",
+                        principalColumn: "InventoryId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Rentals_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -131,7 +131,7 @@ namespace WebbBibliotek.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Book_Authors", x => new { x.AuthorId, x.BookId });
+                    table.PrimaryKey("PK_Book_Authors", x => new { x.BookId, x.AuthorId });
                     table.ForeignKey(
                         name: "FK_Book_Authors_Authors_AuthorId",
                         column: x => x.AuthorId,
@@ -146,10 +146,32 @@ namespace WebbBibliotek.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    CustomerId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerFirstName = table.Column<string>(nullable: false),
+                    CustomerLastName = table.Column<string>(nullable: false),
+                    LibraryCard = table.Column<int>(nullable: false),
+                    RentalId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.CustomerId);
+                    table.ForeignKey(
+                        name: "FK_Customers_Rentals_RentalId",
+                        column: x => x.RentalId,
+                        principalTable: "Rentals",
+                        principalColumn: "RentalId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Book_Authors_BookId",
+                name: "IX_Book_Authors_AuthorId",
                 table: "Book_Authors",
-                column: "BookId");
+                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_InventoryId",
@@ -170,6 +192,11 @@ namespace WebbBibliotek.Migrations
                 name: "IX_Rentals_InventoryId",
                 table: "Rentals",
                 column: "InventoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rentals_UserId",
+                table: "Rentals",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -194,6 +221,9 @@ namespace WebbBibliotek.Migrations
 
             migrationBuilder.DropTable(
                 name: "Inventories");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

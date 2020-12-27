@@ -17,8 +17,15 @@ namespace WebbBibliotek.Models
 
         // Nav prop
         public Inventory Inventory { get; set; }
-
         public int? InventoryId { get; set; }
+
+
+        //But what about the other way around? We have an RPG character and want
+        //to select the corresponding user? To be able to do that, we add a User
+        //property to the Character model, as well.
+        // Nav prop
+        public User User { get; set; }
+        public int? UserId { get; set; }
 
         public List<Customer> Customers { get; set; }
 
@@ -28,8 +35,11 @@ namespace WebbBibliotek.Models
         {
             get
             {
-                return ReturnDate == null ? false : true; // 
+                return ReturnDate == null ? false : true; 
             }
         }
+
+
+
     }
 }

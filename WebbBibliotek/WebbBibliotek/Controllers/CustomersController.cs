@@ -114,7 +114,7 @@ namespace WebbBibliotek.Controllers
                 return NotFound("User not found");
             }
 
-            var inventory = await _context.Inventories
+            var inventory = await _context.Inventories 
                 .Where(i => i.BookId == bookId)
                 .Include(i => i.Rentals)
                 .ToListAsync();
@@ -141,7 +141,7 @@ namespace WebbBibliotek.Controllers
             _context.Rentals.Add(rental);
             await _context.SaveChangesAsync();
 
-            return Ok("Film rented!");
+            return Ok("Book rented!");
 
             //Inventory availableInventoryItem = null;
             //foreach (var item in inventory) // Kolla om boken är tillgänglig. 

@@ -51,13 +51,17 @@ namespace WebbBibliotek.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("RatingId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<int>("ReleaseYear")
-                        .HasColumnType("int");
+                    b.Property<string>("ReleaseYear")
+                        .IsRequired()
+                        .HasColumnType("char(4)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.HasKey("BookId");
 
@@ -70,15 +74,15 @@ namespace WebbBibliotek.Migrations
 
             modelBuilder.Entity("WebbBibliotek.Models.Book_Author", b =>
                 {
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.HasKey("AuthorId", "BookId");
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("BookId");
+                    b.HasKey("BookId", "AuthorId");
+
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Book_Authors");
                 });
@@ -91,9 +95,11 @@ namespace WebbBibliotek.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CustomerFirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CustomerLastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LibraryCard")
@@ -156,7 +162,9 @@ namespace WebbBibliotek.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("RentalDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<bool>("Rented")
                         .HasColumnType("bit");
@@ -164,11 +172,37 @@ namespace WebbBibliotek.Migrations
                     b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("RentalId");
 
                     b.HasIndex("InventoryId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Rentals");
+                });
+
+            modelBuilder.Entity("WebbBibliotek.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("WebbBibliotek.Models.Book", b =>
@@ -179,7 +213,9 @@ namespace WebbBibliotek.Migrations
 
                     b.HasOne("WebbBibliotek.Models.Rating", "Rating")
                         .WithMany("Books")
-                        .HasForeignKey("RatingId");
+                        .HasForeignKey("RatingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebbBibliotek.Models.Book_Author", b =>
@@ -209,6 +245,10 @@ namespace WebbBibliotek.Migrations
                     b.HasOne("WebbBibliotek.Models.Inventory", "Inventory")
                         .WithMany("Rentals")
                         .HasForeignKey("InventoryId");
+
+                    b.HasOne("WebbBibliotek.Models.User", "User")
+                        .WithMany("Rentals")
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
