@@ -15,7 +15,7 @@ namespace BookStoresWebAPI.Models
         {
         }
 
-        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<BookAuthor> BookAuthors { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
@@ -30,7 +30,7 @@ namespace BookStoresWebAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Name=BookStoresDB");
+                optionsBuilder.UseSqlServer("Server=.\\(localdb)\\MSSQLLocalDB;Database=BookStoresDB;Trusted_Connection=True;");
             }
         }
 

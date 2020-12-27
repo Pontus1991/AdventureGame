@@ -9,7 +9,7 @@ namespace WebbBibliotek.Models
     {
         public int RentalId { get; set; }
 
-        public DateTime RentalDate { get; set; } 
+        public DateTime? RentalDate { get; set; } //Även fast det är nullable här, så sköter controllern inmatningen automatiskt
 
         public DateTime? ReturnDate { get; set; } // Om denna INTE är null så har filmen lämnats tillbaks. 
 
@@ -28,7 +28,7 @@ namespace WebbBibliotek.Models
         {
             get
             {
-                return ReturnDate == null ? false : true;
+                return ReturnDate == null ? false : true; // 
             }
         }
     }

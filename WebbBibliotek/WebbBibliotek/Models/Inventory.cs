@@ -10,12 +10,14 @@ namespace WebbBibliotek.Models
         public int InventoryId { get; set; }
 
         public List<Book> Books { get; set; }
+
         public int? BookId { get; set; }
 
         public List<Rental> Rentals { get; set; }
+
         public int? RentalId { get; set; }
 
-        public bool Available
+        public bool Available  // Kolla om boken är tillgänglig
         {
             get
             {
