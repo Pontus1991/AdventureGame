@@ -41,7 +41,9 @@ namespace WebbBibliotek
             }
 
             app.UseRouting();
-           
+
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
