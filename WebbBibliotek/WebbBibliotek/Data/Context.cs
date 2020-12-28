@@ -11,6 +11,7 @@ namespace WebbBibliotek.Data
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
 
+
         public DbSet<User> Users { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Book> Books { get; set; }
