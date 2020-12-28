@@ -16,6 +16,17 @@ namespace WebbBibliotek.Data
             _context = context;
         }
 
+     
+
+        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using (var hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
+        }
+
         public async Task<ServiceResponse<int>> Register(User user, string password)
         {
             ServiceResponse<int> response = new ServiceResponse<int>();
@@ -34,13 +45,9 @@ namespace WebbBibliotek.Data
             return response;
         }
 
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        public Task<ServiceResponse<string>> Login(string username, string password)
         {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
+            throw new NotImplementedException();
         }
 
         public async Task<bool> UserExists(string username)
@@ -54,15 +61,48 @@ namespace WebbBibliotek.Data
 
 
 
-        Task<ServiceResponse<string>> IAuthRepository.Login(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task<ServiceResponse<int>> Register(User user, string password)
+        //{
+        //    ServiceResponse<int> response = new ServiceResponse<int>();
+        //    if (await UserExists(user.Username))
+        //    {
+        //        response.Success = false;
+        //        response.Message = "User already exists.";
+        //        return response;
+        //    }
+        //    CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+        //    user.PasswordHash = passwordHash;
+        //    user.PasswordSalt = passwordSalt;
+        //    await _context.Users.AddAsync(user);
+        //    await _context.SaveChangesAsync();
+        //    response.Data = user.UserId;
+        //    return response;
+        //}
 
-        Task<bool> IAuthRepository.UserExists(string username)
-        {
-            throw new NotImplementedException();
-        }
+        //private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        //{
+        //    using (var hmac = new System.Security.Cryptography.HMACSHA512())
+        //    {
+        //        passwordSalt = hmac.Key;
+        //        passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+        //    }
+        //}
+
+        //public async Task<bool> UserExists(string username)
+        //{
+        //    if (await _context.Users.AnyAsync(x => x.Username.ToLower() == username.ToLower()))
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
+
+
+        //Task<ServiceResponse<string>> IAuthRepository.Login(string username, string password)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
 }
