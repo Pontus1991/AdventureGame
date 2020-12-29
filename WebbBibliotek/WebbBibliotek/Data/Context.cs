@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebbBibliotek.Models;
+using BookStoresWebAPI.Models;
 
 namespace WebbBibliotek.Data
 {
     public class Context : DbContext
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
-
 
         public DbSet<User> Users { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
@@ -20,7 +20,8 @@ namespace WebbBibliotek.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Book_Author> Book_Authors { get; set; }
-        
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) // Måste säga åt entity Framework hur vi vill att denna many-tomany-ralation ska vara. 
         {
@@ -56,6 +57,5 @@ namespace WebbBibliotek.Data
             //    .WithMany(c => c.Rentals)
             //    .HasForeignKey(sc => sc.CustomerId);
         }
-
     }
 }

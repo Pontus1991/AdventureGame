@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStoresWebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +25,11 @@ namespace WebbBibliotek.Models
         //to select the corresponding user? To be able to do that, we add a User
         //property to the Character model, as well.
         // Nav prop
+        //public User User { get; set; }
+        //public int? UserId { get; set; }
+
         public User User { get; set; }
+        
         public int? UserId { get; set; }
 
         public List<Customer> Customers { get; set; }

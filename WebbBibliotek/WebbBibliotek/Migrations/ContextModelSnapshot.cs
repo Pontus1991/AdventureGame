@@ -19,6 +19,33 @@ namespace WebbBibliotek.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BookStoresWebAPI.Models.User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RentalId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("WebbBibliotek.Models.Author", b =>
                 {
                     b.Property<int>("AuthorId")
@@ -184,27 +211,6 @@ namespace WebbBibliotek.Migrations
                     b.ToTable("Rentals");
                 });
 
-            modelBuilder.Entity("WebbBibliotek.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<byte[]>("PasswordHash")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<byte[]>("PasswordSalt")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("WebbBibliotek.Models.Book", b =>
                 {
                     b.HasOne("WebbBibliotek.Models.Inventory", "Inventory")
@@ -246,7 +252,7 @@ namespace WebbBibliotek.Migrations
                         .WithMany("Rentals")
                         .HasForeignKey("InventoryId");
 
-                    b.HasOne("WebbBibliotek.Models.User", "User")
+                    b.HasOne("BookStoresWebAPI.Models.User", "User")
                         .WithMany("Rentals")
                         .HasForeignKey("UserId");
                 });
