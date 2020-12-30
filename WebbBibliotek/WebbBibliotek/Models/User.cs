@@ -12,9 +12,5 @@ namespace BookStoresWebAPI.Models
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
- 
-
-        public List<Rental> Rentals { get; set; }
-        public int? RentalId { get; set; }
     }
 }
