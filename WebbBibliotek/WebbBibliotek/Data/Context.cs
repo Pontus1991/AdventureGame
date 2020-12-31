@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebbBibliotek.Entities;
 using WebbBibliotek.Models;
 
 
@@ -13,7 +12,7 @@ namespace WebbBibliotek.Data
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
+        
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Rental> Rentals { get; set; }
