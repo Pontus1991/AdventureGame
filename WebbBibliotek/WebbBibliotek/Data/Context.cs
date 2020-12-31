@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebbBibliotek.Entities;
 using WebbBibliotek.Models;
-using BookStoresWebAPI.Models;
+
 
 namespace WebbBibliotek.Data
 {
