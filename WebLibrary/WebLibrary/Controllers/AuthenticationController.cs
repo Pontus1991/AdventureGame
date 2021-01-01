@@ -42,9 +42,9 @@ namespace WebLibrary.Controllers
             var result = await userManager.CreateAsync(user, model.PassWord);
             if (!result.Succeeded)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User was not Created Successfully" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User was not Created Successfully2" });
             }
-            return Ok(new Response { Status = "Error", Message = "User Created Successfully" });
+            return Ok(new Response { Status = "Success", Message = "User Created Successfully" });
 
         }
     }
