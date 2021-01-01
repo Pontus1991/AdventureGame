@@ -10,9 +10,9 @@ using WebLibrary.Authentication;
 
 namespace WebLibrary.Controllers
 {
-    
     [Route("api/[controller]")]
     [ApiController]
+
     public class AuthenticationController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;
@@ -45,7 +45,6 @@ namespace WebLibrary.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User was not Created Successfully2" });
             }
             return Ok(new Response { Status = "Success", Message = "User Created Successfully" });
-
         }
     }
 }
