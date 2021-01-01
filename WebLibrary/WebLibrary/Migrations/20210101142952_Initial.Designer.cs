@@ -10,7 +10,7 @@ using WebLibrary.Authentication;
 namespace WebLibrary.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210101131653_Initial")]
+    [Migration("20210101142952_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
