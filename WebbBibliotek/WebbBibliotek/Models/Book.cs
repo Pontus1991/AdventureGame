@@ -10,6 +10,7 @@ namespace WebbBibliotek.Models
     public class Book
     {
         public int BookId { get; set; }
+
         [Required] // Översätter det till SQL när vi gör våra migereringar. 
         [MaxLength(40), MinLength(4)]
         public string Title { get; set; }
@@ -21,9 +22,13 @@ namespace WebbBibliotek.Models
         public long ISBN { get; set; }
 
         public Rating Rating { get; set; }
-        [Required]
+        
         public int? RatingId { get; set; }
+
+
         public List<Book_Author> Book_Authors { get; set; }
+
+
         public Inventory Inventory { get; set; }
 
     }
