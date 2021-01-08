@@ -33,7 +33,8 @@ namespace WebbBibliotek.Controllers
         public async Task<ActionResult<Rental>> GetRental(int id)
         {
             var rental = await _context.Rentals.FindAsync(id);
-
+            
+           
             if (rental == null)
             {
                 return NotFound();
@@ -52,6 +53,10 @@ namespace WebbBibliotek.Controllers
             {
                 return BadRequest();
             }
+
+            rental.Rented = false;
+
+            rental.ReturnDate = DateTime.Now;
 
             _context.Entry(rental).State = EntityState.Modified;
 

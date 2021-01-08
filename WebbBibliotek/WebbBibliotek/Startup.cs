@@ -28,16 +28,12 @@ namespace WebbBibliotek
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Context>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddControllersWithViews()
+            services.AddControllersWithViews() // Ändrat och lagt till "WithViews" så att man kan se förseningar i en vy. 
+                
                 .AddNewtonsoftJson(x => {
                     x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     x.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
                 });
-
-
-            // For entity Framework
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +50,10 @@ namespace WebbBibliotek
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                //endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

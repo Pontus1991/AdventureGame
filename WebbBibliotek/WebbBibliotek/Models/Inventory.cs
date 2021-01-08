@@ -9,6 +9,10 @@ namespace WebbBibliotek.Models
     {
         public int InventoryId { get; set; }
 
+        //public int BookId { get; set; }
+
+        //public Book Book { get; set; } // nav prop
+
         public List<Book> Books { get; set; }
 
         public int? BookId { get; set; }

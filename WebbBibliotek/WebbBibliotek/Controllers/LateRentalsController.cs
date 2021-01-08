@@ -22,7 +22,7 @@ namespace WebbBibliotek.Controllers
         // GET: LateRentals
         public async Task<IActionResult> Index()
         {
-            var context = _context.Rentals.Include(r => r.Inventory);
+            var context = _context.Rentals.Include(r => r.Inventory); // Efter Reantls.Where(r => r.ReturnDate < DateTime.Now).Include... Nu kommer den gå in på vyn och lägga in alla som är försenade. varje gång man öppnar sidan så gör den denna check. Kollar i databasen vad det står just nu 
             return View(await context.ToListAsync());
         }
 
